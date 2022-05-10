@@ -1,4 +1,4 @@
 # rate-my-class
  Hey Everyone - Ben  
- Hola - Rudy
+ xin chào - Rudy
  Hoi - Jianna :)
