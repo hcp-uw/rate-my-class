@@ -1,3 +1,3 @@
 # rate-my-class
- Hey Everyone - Ben
+ Hey Everyone - Ben  
  Hola - Rudy
