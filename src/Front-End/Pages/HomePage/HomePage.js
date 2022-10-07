@@ -1,6 +1,6 @@
-import logo from './Components/WashingtonLogo.png'
-import './CSS/HomePage.css'
-import NavBar from './NavBar'
+import logo from '../../Components/WashingtonLogo.png'
+import './HomePage.css'
+import NavBar from '../../Components/NavBar/NavBar.js'
 
 function HomePage() {
     return (
