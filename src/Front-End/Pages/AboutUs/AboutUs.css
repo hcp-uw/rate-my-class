@@ -1,0 +1,27 @@
+.AboutUs {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(180, 143, 197);
+    background-size: cover;
+}
+
+.Center {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    top: 30%;
+    left: 45%;
+}
+
+#UWLogo {
+    width: 250px;
+    height: 200px;
+}
+
+#SearchBar {
+    padding: 10px;
+}

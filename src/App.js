@@ -1,9 +1,19 @@
 import HomePage from './Front-End/Pages/HomePage/HomePage.js';
-import { Routes, Route, BrowserRouter as Router, } from "react-router-dom";
+import AboutUs from './Front-End/Pages/AboutUs/AboutUs.js';
+
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return(
-    <HomePage/>
+    <Router>
+      <Routes>
+
+        <Route path="*" element={<HomePage/>}/>
+        
+        <Route path="/about"element={<AboutUs/>}/>
+
+      </Routes>
+    </Router>
   )
 }
 
