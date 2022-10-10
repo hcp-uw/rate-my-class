@@ -6,7 +6,7 @@ function AboutUs() {
       <div className="AboutUs">
         <NavBar/>
         <div className='Center'>
-          <h1>This is a page about us!</h1>
+          <h1>This is a page about us! :)</h1>
         </div>
       </div>
     );
