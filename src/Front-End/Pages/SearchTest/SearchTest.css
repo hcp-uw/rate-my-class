@@ -1,0 +1,18 @@
+.SearchTest {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(180, 143, 197);
+    background-size: cover;
+}
+
+.Title {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    text-align: left;
+    align-items: left;
+    flex-direction: column;
+    justify-content: left;
+    top: 5%;
+    left: 15%;
+}
