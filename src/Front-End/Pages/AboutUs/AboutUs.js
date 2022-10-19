@@ -6,7 +6,7 @@ function AboutUs() {
       <div className="AboutUs">
         <NavBar/>
         <div className='Center'>
-          <h1>This is a page about us! :)</h1>
+          <h1>Meet our Team</h1>
         </div>
 
         <div class="flex-container">
@@ -17,8 +17,29 @@ function AboutUs() {
               alt="Leonardo's Picture">
             </img> */}
           </div>
+          <div> 
+            <h3>Katie Shi</h3>
+            <p>Bottom Text</p>
+          </div>
           <div>
             <h3>John Doe</h3>
+            <p>Bottom Text</p>
+          </div>
+          <div>
+            <h3>John Doe </h3>
+            <p>Bottom Text</p>
+          </div>
+          <div>
+            <h3>John Doe</h3>
+            <p>Bottom Text</p>
+          </div>
+          <div>
+            <h3>John Doe</h3>
+            <p>Bottom Text</p>
+          </div>
+          <div>
+            <h3>John Doe</h3>
+            <p>Bottom Text</p>
           </div>
         </div>
 

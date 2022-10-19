@@ -1,7 +1,7 @@
 .AboutUs {
     width: 100vw;
     min-height: 100vh;
-    background-color: rgb(180, 143, 197);
+    background-color: rgb(230, 213, 251);
     background-size: cover;
 }
 
@@ -13,8 +13,8 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    top: 30%;
-    left: 45%;
+    top: 0;
+
 }
 
 #UWLogo {
@@ -31,15 +31,15 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    padding: 50px;
+    padding: 70px;
 }
 
 .flex-container > div {
     background-color: beige;
     border-style: solid;
-    border-radius: 50px;
-    border-color: rgb(117, 15, 117);
-    border-width: 7px;
+    border-radius: 20px;
+    border-color: rgb(124, 33, 167);
+    border-width: 4px;
     margin: 10px 10px 10px 10px;
     padding: 20px;
     text-align: center;
