@@ -1,6 +1,9 @@
 import { getData } from "../utils/utils.js";
 
-export async function getClassData(test = "Classes"){
-    let data = await getData(test);
+/* Returns data from a specified Class
+   @Param Class - Specified Class Name
+*/
+export async function getClassData(Class){
+    let data = await getData("Classes/" + Class);
     return data;
 }
