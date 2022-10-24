@@ -32,6 +32,8 @@
     flex-direction: row;
     justify-content: center;
     padding: 70px;
+    margin-left: 111px;
+    /* Navbar is 111px */
 }
 
 .flex-container > div {
@@ -41,8 +43,22 @@
     border-color: rgb(124, 33, 167);
     border-width: 4px;
     margin: 10px 10px 10px 10px;
-    padding: 20px;
+    padding: 12px;
     text-align: center;
     font-size: 20px;
+    width: 8em;
+    font-family: fantasy;
 }
 
+.ben {
+    width: 7em;
+    height: 5em;
+    border-radius: 2em;
+}
+
+.aboutUsPersonSubtext {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: left;
+}
