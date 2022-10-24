@@ -50,7 +50,6 @@ function AboutUs() {
             <p>Bottom Text</p>
           </div>
 
-       
 
           <div>
             <h3>John Doe</h3>
