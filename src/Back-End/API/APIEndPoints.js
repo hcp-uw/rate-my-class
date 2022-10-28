@@ -7,3 +7,8 @@ export async function getClassData(Class){
     let data = await getData("Classes/" + Class);
     return data;
 }
+
+export async function getDevs(devs){
+    let data = await getData("People/" + devs);
+    return data;
+}
