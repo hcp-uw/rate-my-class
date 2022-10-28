@@ -8,10 +8,10 @@ export async function getClassData(Class){
     return data;
 }
 
-// get Devs endpoints
+// Gets Devs endpoints and returns data from a developer
 // @params: 
 //      devs: dev's name
-export async function getDevs(devs){
-    let data = await getData("People/" + devs);
+export async function getDevs(){
+    let data = await getData("People/");
     return data;
 }
