@@ -33,7 +33,9 @@
     flex-direction: row;
     justify-content: center;
     padding-top: 15vh;
-    margin-left: 9.87%
+    /* margin-left: 9.87% */
+    margin-right: 7%;
+    margin-left: 16.87%
 }
 
 .flex-container > div {
@@ -42,25 +44,30 @@
     border-radius: 20px;
     border-color: rgb(124, 33, 167);
     border-width: 4px;
-    margin: 0.5vw;
-    margin-bottom: 2%;
+    /* Top right bottom left */
+    margin: 1vh 1vw 1vh 1vw;
     padding: 1vw;
-    text-align: center;
-    font-size: 20px;
     width: 18vw;
-    height:auto;
-    font-family: fantasy;
+    height: 32vh;
+    text-align: center;
+    font-family: georgia;
+    font-size: 20px;
 }
 
-.ben {
-    width: 16vw;
+.flex-picture {
+    width: 12vw;
     height: 12vh;
     border-radius: 2vw;
 }
 
+.aboutUsPersonHeader {
+    font-weight: bolder;
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+}
 .aboutUsPersonSubtext {
     font-size: 12px;
-    font-weight: bold;
-    font-family: sans-serif;
+    font-family: arial;
     text-align: left;
+    
 }

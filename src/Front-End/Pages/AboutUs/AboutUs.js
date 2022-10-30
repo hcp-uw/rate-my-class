@@ -11,49 +11,65 @@ function AboutUs() {
           <h1>Meet our Team</h1>
         </div>
 
-        <div class="flex-container">
+        {/* Minimize this div */}
+        <div class="flex-container"> 
           <div>
-            <h3>Ben 10</h3>
+            <p class="aboutUsPersonHeader">Ben</p>
             <p class="aboutUsPersonSubtext">
-              Junior <br></br>
-              He likes banana peppers <br></br>
-              To be changed with database
+              <b>Fun-fact:</b> He likes banana peppers <br></br>
+              <b>Grade:</b> Junior <br></br>
+              <b>Major:</b>  Economics<br></br>
+              <b>Role:</b> Front-End/Back-end
             </p>
-            <p>He likes banana peppers</p>
             <img src={ben} alt="ben"
-            class = "ben">
+            class = "flex-picture">
             </img>
           </div>
 
           <div> 
-            <h3>Katie Shi</h3>
-            <p>Bottom Text</p>
+            <p class="aboutUsPersonHeader">Katie</p>
+            <p class="aboutUsPersonSubtext">
+            </p>
           </div>
 
           <div>
-            <h3>Tan</h3>
-            <p>Bottom Text</p>
+            <p class="aboutUsPersonHeader">Tan</p>
+            <p class="aboutUsPersonSubtext">
+              <b>Fun-fact:</b> <br></br>
+              <b>Grade:</b> Junior <br></br>
+              <b>Major:</b> INFO (hopefully)<br></br>
+              <b>Role:</b> Back-end
+            </p>
           </div>
 
           <div>
-            <h3>Gary</h3>
-            <p>Bottom Text</p>
+            <p class="aboutUsPersonHeader">Gary</p>
+            <p class="aboutUsPersonSubtext">
+              <b>Fun-fact:</b> Drink orange juice and win the prize <br></br>
+              <b>Grade:</b> Sophomore <br></br>
+              <b>Major:</b> ACMS <br></br>
+              <b>Role:</b> Back-end
+            </p>
           </div>
 
           <div>
-            <h3>Cypress</h3>
-            <p>Bottom Text</p>
+            <p class="aboutUsPersonHeader">Cypress</p>
+            <p class="aboutUsPersonSubtext">
+              <b>Fun-fact:</b> I once won a TV from lottery <br></br>
+              <b>Grade:</b> Junior <br></br>
+              <b>Major:</b>  CS<br></br>
+              <b>Role:</b> Back-end
+            </p>
           </div>
 
           <div>
-            <h3>Leonardo</h3>
-            <p>Bottom Text</p>
-          </div>
-
-
-          <div>
-            <h3>John Doe</h3>
-            <p>Bottom Text</p>
+            <p class="aboutUsPersonHeader">Leonardo</p>
+            <p class="aboutUsPersonSubtext">
+              <b>Fun-fact:</b> I can kind of juggle <br></br>
+              <b>Grade:</b> Sophomore <br></br>
+              <b>Major:</b>  Mathematics <br></br>
+              <b>Role:</b> Front-End
+            </p>
           </div>
         </div>
 
