@@ -1,6 +1,6 @@
 import './AboutUs.css'
 import NavBar from '../../Components/NavBar/NavBar.js'
-import ben from '../AboutUs/AboutUsImages/benben.jpg'
+// import ben from '../AboutUs/AboutUsImages/benben.jpg'
 // import images from '../AboutUs/AboutUsImages'
 
 function AboutUs() {
@@ -21,9 +21,9 @@ function AboutUs() {
               <b>Major:</b>  Economics<br></br>
               <b>Role:</b> Front-End/Back-end
             </p>
-            <img src={ben} alt="ben"
+            {/* <img src={ben} alt="ben"
             class = "flex-picture">
-            </img>
+            </img> */}
           </div>
 
           <div> 
