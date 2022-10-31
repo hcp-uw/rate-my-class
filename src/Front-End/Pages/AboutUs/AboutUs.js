@@ -7,12 +7,9 @@ function AboutUs() {
     return (
       <div className="AboutUs">
         <NavBar/>
-        <div className='Center'>
-          <h1>Meet our Team</h1>
-        </div>
-
         {/* Minimize this div */}
         <div class="flex-container"> 
+          <h1 id="meetOurTeam">Meet our Team</h1>
           <div>
             <p class="aboutUsPersonHeader">Ben</p>
             <p class="aboutUsPersonSubtext">

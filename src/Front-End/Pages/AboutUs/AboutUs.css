@@ -1,7 +1,7 @@
 .AboutUs {
     width: 100vw;
     min-height: 100vh;
-    background-color: rgb(230, 213, 251);
+    background-color: rgb(180, 143, 197);
     background-size: cover;
 }
 
@@ -14,17 +14,24 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    top: 0;
-
 }
 
 #UWLogo {
     width: 250px;
     height: 200px;
+    top: 30%;
+    left: 45%;
 }
 
 #SearchBar {
     padding: 10px;
+}
+
+#meetOurTeam {
+    /* Header is inside flexbox but NOT a div
+    this helps with it being centered relative to flexbox square */
+    position: absolute;
+    margin-top: -9vh;
 }
 
 .flex-container {
@@ -39,7 +46,7 @@
 }
 
 .flex-container > div {
-    background-color: beige;
+    background-color: rgb(225, 224, 214);
     border-style: solid;
     border-radius: 20px;
     border-color: rgb(124, 33, 167);
@@ -51,7 +58,7 @@
     height: 32vh;
     text-align: center;
     font-family: georgia;
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .flex-picture {
@@ -66,7 +73,7 @@
     margin-bottom: 1vh;
 }
 .aboutUsPersonSubtext {
-    font-size: 12px;
+    font-size: 14px;
     font-family: arial;
     text-align: left;
     
