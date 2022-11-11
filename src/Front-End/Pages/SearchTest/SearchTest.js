@@ -4,7 +4,6 @@ import grade from '../../Components/143distribution.png'
 import { Rating } from '@mui/material';
 
 function SearchTest() {
-  var individual_rating_space = 0;
     return (
       <div className="SearchTest">
         <NavBar/>
