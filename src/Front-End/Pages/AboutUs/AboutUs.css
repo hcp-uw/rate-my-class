@@ -8,41 +8,66 @@
 .Center {
     display: flex;
     position: absolute;
-    margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 5vh; /*Doesnt do anything for some reason*/
     text-align: center;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    top: 30%;
-    left: 45%;
 }
 
 #UWLogo {
     width: 250px;
     height: 200px;
+    top: 30%;
+    left: 45%;
 }
 
 #SearchBar {
     padding: 10px;
 }
 
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    padding: 50px;
+    /* margin-left: 9.87% */
+    margin-right: 7%;
+    margin-left: 16.87%
 }
 
 .flex-container > div {
-    background-color: beige;
+    background-color: rgb(225, 224, 214);
     border-style: solid;
-    border-radius: 50px;
-    border-color: rgb(117, 15, 117);
-    border-width: 7px;
-    margin: 10px 10px 10px 10px;
-    padding: 20px;
+    border-radius: 20px;
+    border-color: rgb(124, 33, 167);
+    border-width: 4px;
+    /* Top right bottom left */
+    margin: 1vh 1vw 1vh 1vw;
+    padding: 1vw;
+    width: 18vw;
+    height: 32vh;
     text-align: center;
-    font-size: 20px;
+    font-family: georgia;
+    font-size: 26px;
 }
 
+.flex-picture {
+    width: 12vw;
+    height: 12vh;
+    border-radius: 2vw;
+}
+
+.aboutUsPersonHeader {
+    font-weight: bolder;
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+}
+.aboutUsPersonSubtext {
+    font-size: 14px;
+    font-family: arial;
+    text-align: left;
+    
+}

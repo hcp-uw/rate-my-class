@@ -5,13 +5,13 @@ import { getData } from "../utils/utils.js";
 */
 export async function getClassData(Test = "Classes/", Class){
     let data = await getData(Test + Class);
-    return data;
+    return Array.from(Object.values(data));
 }
 
 // get Devs endpoints
 // @params: 
 //      devs: dev's name
-export async function getDevs(devs){
-    let data = await getData("People/" + devs);
-    return data;
+export async function getDevs(){
+    let data = await getData("People/");
+    return Array.from(Object.values(data));
 }
