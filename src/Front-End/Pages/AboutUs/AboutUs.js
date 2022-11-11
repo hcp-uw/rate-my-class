@@ -1,7 +1,9 @@
 import './AboutUs.css'
 import NavBar from '../../Components/NavBar/NavBar.js'
+import logo from '../../Components/WashingtonLogo.png'
 // import ben from '../AboutUs/AboutUsImages/benben.jpg'
 // import images from '../AboutUs/AboutUsImages'
+
 
 function AboutUs() {
     return (
@@ -9,7 +11,8 @@ function AboutUs() {
         <NavBar/>
         {/* Minimize this div */}
         <div class="flex-container"> 
-          <h1 id="meetOurTeam">Meet our Team</h1>
+        <h1 id="meetOurTeam">Meet our Team</h1>
+
           <div>
             <p class="aboutUsPersonHeader">Ben</p>
             <p class="aboutUsPersonSubtext">
@@ -18,7 +21,7 @@ function AboutUs() {
               <b>Major:</b>  Economics<br></br>
               <b>Role:</b> Front-End/Back-end
             </p>
-            {/* <img src={ben} alt="ben"
+            {/* <img src={logo} alt="ben"
             class = "flex-picture">
             </img> */}
           </div>

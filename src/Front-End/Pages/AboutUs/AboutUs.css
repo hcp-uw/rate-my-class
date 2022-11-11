@@ -62,9 +62,21 @@
 }
 
 .flex-picture {
-    width: 12vw;
-    height: 12vh;
+    width: 18vw;
+    height: 32vh;
     border-radius: 2vw;
+    border-width: 2px;
+    border-style: solid;
+    opacity: 0.5;
+    position: relative;
+}
+
+/* Todo, figure out a way to do bg without messing up everything */
+.testBGImg { 
+    background-image: url("../../Components/WashingtonLogo.png");
+    background-size: 18vw 32vh;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .aboutUsPersonHeader {
