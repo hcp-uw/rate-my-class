@@ -1,6 +1,6 @@
 import './AboutUs.css'
 import NavBar from '../../Components/NavBar/NavBar.js'
-import logo from '../../Components/WashingtonLogo.png'
+// import logo from '../../Components/WashingtonLogo.png'
 // import ben from '../AboutUs/AboutUsImages/benben.jpg'
 // import images from '../AboutUs/AboutUsImages'
 
