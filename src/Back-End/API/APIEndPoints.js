@@ -5,7 +5,7 @@ import { getData } from "../utils/utils.js";
 */
 export async function getClassData(Test = "Classes/", Class){
     let data = await getData(Test + Class);
-    return Array.from(Object.values(data));
+    return (data);
 }
 
 // get Devs endpoints
