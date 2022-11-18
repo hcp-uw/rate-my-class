@@ -1,10 +1,10 @@
-import {getDevs} from "../API/APIEndPoints.js"
+import {getAllDevs} from "../API/APIEndPoints.js"
 import {assert} from 'chai';
 
-
-describe("Testing getDevs Function", () => {
+// Test case for getAllDevs
+describe("Testing getAllDevs Function", () => {
     it('Devs Data',async () => {
-      let rsp = await getDevs();
+      let rsp = await getAllDevs();
       console.log(rsp);
     })
 })
