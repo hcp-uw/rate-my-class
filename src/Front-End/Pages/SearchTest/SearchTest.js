@@ -22,6 +22,8 @@ function SearchTest() {
       }
       fetchData();
     })
+
+    
     if (loading) {
       return <CircularProgress size={100} style={{alignSelf: "center"}}/>
     } else {

@@ -2,7 +2,7 @@ import logo from '../../Components/WashingtonLogo.png'
 import './HomePage.css'
 import NavBar from '../../Components/NavBar/NavBar.js'
 import { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function HomePage() {
     const [query, setQuery] = useState("");
