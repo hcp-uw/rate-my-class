@@ -3,7 +3,7 @@ import { getData } from "../utils/utils.js";
 /* Returns data from a specified Class
    @Param Class - Specified Class Name
 */
-export async function getClassData(Test = "Classes/", Class){
+export async function getClassData(Class,Test = "Classes/"){
     let data = await getData(Test + Class);
     return (data);
 }
