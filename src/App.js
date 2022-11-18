@@ -1,6 +1,6 @@
 import HomePage from './Front-End/Pages/HomePage/HomePage.js';
 import AboutUs from './Front-End/Pages/AboutUs/AboutUs.js';
-import SearchTest from './Front-End/Pages/SearchTest/SearchTest.js';
+import SearchTest from './Front-End/Pages/CoursePage/CoursePage.js';
 
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
