@@ -5,29 +5,6 @@
     background-size: cover;
 }
 
-.Center {
-    display: flex;
-    position: absolute;
-    margin-top: 2vh;
-    margin-bottom: 5vh; /*Doesnt do anything for some reason*/
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#UWLogo {
-    width: 250px;
-    height: 200px;
-    top: 30%;
-    left: 45%;
-}
-
-#SearchBar {
-    padding: 10px;
-}
-
-
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -54,20 +31,65 @@
     font-size: 26px;
 }
 
-.flex-picture {
-    width: 12vw;
-    height: 12vh;
-    border-radius: 2vw;
-}
-
 .aboutUsPersonHeader {
+    position: relative;
     font-weight: bolder;
     margin-top: 1.5vh;
     margin-bottom: 1vh;
 }
 .aboutUsPersonSubtext {
+    position: relative;
     font-size: 14px;
     font-family: arial;
     text-align: left;
-    
 }
+
+/* Homepage.css somehow tries to overwrite its width/height */
+/* CSS layout problem: Image on right half for some reason*/
+.flex-container > div:hover{
+    background-color: yellow;
+}
+
+.bgPic:hover {
+    display: block;
+    background-color: red;
+}
+
+.bgPic {
+    /* top,bot right,left*/
+    margin: 0vh -9vw; 
+    position: absolute;
+    width: 18vw !important;
+    height: 32vh !important;
+    opacity: 50%;
+    display: none;
+}
+
+
+/* .Center {
+    display: flex;
+    position: absolute;
+    margin-top: 2vh;
+    margin-bottom: 5vh; 
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+/* #UWLogo {
+    width: 250px;
+    height: 200px;
+    top: 30%;
+    left: 45%;
+} */
+
+/* #SearchBar {
+    padding: 10px;
+} */
+
+/* .flex-picture {
+    width: 12vw;
+    height: 12vh;
+    border-radius: 2vw;
+} */

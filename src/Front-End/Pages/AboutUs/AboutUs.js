@@ -3,6 +3,7 @@ import NavBar from '../../Components/NavBar/NavBar.js'
 import { useEffect, useState } from 'react';
 import { getDevs } from '../../../Back-End/API/APIEndPoints';
 import { CircularProgress } from '@mui/material';
+import logo from '../../Components/WashingtonLogo.png';
 
 function AboutUs() {
     const [aboutUsData, setDevs] = useState([]);
@@ -20,17 +21,15 @@ function AboutUs() {
     const loadCard = (data) => {
       return(
         <div>
-            <p class="aboutUsPersonHeader">{data.Name}</p>
-            <p class="aboutUsPersonSubtext">
-              <b>Fun-fact:</b> {data["Fun-Fact"]}<br></br>
-              <b>Grade:</b> {data.Grade}<br></br>
-              <b>Major:</b> {data.Major}<br></br>
-              <b>Role:</b> {data.Role}
-            </p>
-            {/* <img src={ben} alt="ben"
-            class = "flex-picture">
-            </img> */}
-          </div>
+        <img class="bgPic" src={logo} alt="Logo" id='UWLogo'/>
+          <p class="aboutUsPersonHeader">{data.Name}</p>
+          <p class="aboutUsPersonSubtext">
+            <b>Fun-fact:</b> {data["Fun-Fact"]}<br></br>
+            <b>Grade:</b> {data.Grade}<br></br>
+            <b>Major:</b> {data.Major}<br></br>
+            <b>Role:</b> {data.Role}
+          </p>
+        </div>
       )
     }
 
