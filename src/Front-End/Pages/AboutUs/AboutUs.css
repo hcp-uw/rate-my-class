@@ -47,12 +47,8 @@
 /* Homepage.css somehow tries to overwrite its width/height */
 /* CSS layout problem: Image on right half for some reason*/
 .flex-container > div:hover{
-    background-color: yellow;
-}
-
-.bgPic:hover {
+    content: url(../../Components/WashingtonLogo.png);
     display: block;
-    background-color: red;
 }
 
 .bgPic {
