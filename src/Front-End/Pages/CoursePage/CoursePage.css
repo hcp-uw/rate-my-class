@@ -89,10 +89,21 @@
     border-color: rgb(51, 0, 111);
     border-width: 1px;
     padding: 5px;
+    width: 35vw;
+    height: 10vh;
     text-align: left;
     font-size: 14px;
 }
 
 .Rating body {
     left: 0%;
+}
+
+.center-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 7%;
+    margin-left: 16.87%
 }
