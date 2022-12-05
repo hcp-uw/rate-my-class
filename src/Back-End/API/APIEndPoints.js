@@ -1,4 +1,6 @@
 import { getData } from "../utils/utils.js";
+// import { getSpecificData } from "../utils/utils.js";
+
 
 /* Returns data from a specified course
    @Param Class - Specified Class Name
@@ -24,6 +26,11 @@ export async function getAllDevs(){
 
 // Returns data from all the classes
 export async function getAllCourses(){
+    let data = await getData("Classes/");
+    return data;
+}
+
+export async function getCourseNames(){
     let data = await getData("Classes/");
     return data;
 }

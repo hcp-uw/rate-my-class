@@ -5,6 +5,6 @@ import {assert} from 'chai';
 describe("Testing getAllDevs Function", () => {
     it('Devs Data',async () => {
       let rsp = await getAllDevs();
-      console.log(rsp);
+      // console.log(rsp);
     })
 })
