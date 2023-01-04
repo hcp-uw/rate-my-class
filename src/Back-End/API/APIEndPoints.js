@@ -15,7 +15,7 @@ export async function getCourse(course){
 */
 export async function getDev(dev){
     let data = await getData("People/" + dev);
-    return data;
+    return Array.from(data);
 }
 
 // Gets Devs endpoints and returns data from a developer
@@ -31,6 +31,12 @@ export async function getAllCourses(){
 }
 
 export async function getCourseNames(){
-    let data = await getData("Classes/");
-    return data;
+    let data = await getAllCourses();
+    let nData = Array.from(Object.values(data));
+    let retData  = []
+    nData.forEach((d) => {
+        retData.push(d.Code)
+    });
+
+    return retData;
 }

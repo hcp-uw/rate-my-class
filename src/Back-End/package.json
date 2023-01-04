@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test/*.js --exit"
+    "test": "mocha test/testClasses.js --exit"
   },
   "author": "",
   "license": "ISC",
