@@ -1,0 +1,109 @@
+.SearchTest {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(230, 213, 251);
+    background-size: cover;
+}
+
+.Page {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    text-align: left;
+    align-items: left;
+    flex-direction: column;
+    justify-content: left;
+    top: 8%;
+    left: 15%;
+    right: 5%
+}
+
+.Title h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 70px;
+    text-align: left;
+    margin: 0.0
+}
+
+.Title h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    text-align: left;
+    margin: 0.2
+}
+
+.Title h3 {
+    /* font-family: 'Raleway', sans-serif; */
+    font-size: 18px;
+    text-align: left;
+    margin: 0.
+}
+
+.GradeDistribute {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    text-align: left;
+    align-items: left;
+    flex-direction: column;
+    justify-content: left;
+    top: 100%;
+    left: 0%;
+    width: 45%;
+    height: 35%
+}
+
+#143grade {
+    width: 25px;
+    height: 20px;
+}
+
+.RatingBar {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    text-align: right;
+    align-items: right;
+    flex-direction: column;
+    justify-content: right;
+    top: 40%;
+    right: 10%;
+}
+
+.Reviews {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    text-align: left;
+    align-items: left;
+    flex-direction: column;
+    justify-content: left;
+    top: 100%;
+    left: 50%;
+}
+
+.Reviews > body {
+    margin-bottom: 5px;
+    border-style: ridge;
+    border-radius: 5px;
+    border-color: rgb(51, 0, 111);
+    border-width: 1px;
+    padding: 5px;
+    width: 35vw;
+    height: 10vh;
+    text-align: left;
+    font-size: 14px;
+}
+
+.Rating body {
+    left: 0%;
+}
+
+.center-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 7%;
+    margin-left: 16.87%
+}
