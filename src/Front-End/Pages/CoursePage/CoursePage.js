@@ -2,7 +2,7 @@ import './CoursePage.css'
 import NavBar from '../../Components/NavBar/NavBar.js'
 import grade from '../../Components/143distribution.png'
 import { Rating } from '@mui/material';
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getClassData } from '../../../Back-End/API/APIEndPoints';
 import { useEffect, useState, useRef } from 'react';
 import { CircularProgress } from '@mui/material';
@@ -13,7 +13,7 @@ function CoursePage() {
 
     const [classData, setClass] = useState([]);
     const [loading, setLoading] = useState(true);
-    const data = useRef(0);
+    const data = useRef(0);  // useRef is for preserving local value
 
     useEffect(() => {
       const fetchData = async () => {
@@ -28,7 +28,7 @@ function CoursePage() {
     const individualReview = (review) => {
       var nameLen = 60 - review.User.length
       var alignment = nameLen + "%"
-      console.log(alignment)
+      // console.log(alignment)
 
       return (
         <body> 
@@ -41,6 +41,7 @@ function CoursePage() {
     }
 
     const renderReviews = () => {
+      // array access
       const allReviews = Object.entries(classData.Reviews);
       const reviewArr = []
       allReviews.forEach((review)=>{
@@ -76,12 +77,19 @@ function CoursePage() {
     
     // display class info
     } else {
-      // S
-      return ( 
+      const url = "/rate/" + params.classID;
+      return (
         <div className="SearchTest">
           <NavBar/>
           <div className='Page'>
+            <header>
               <h1> {params.classID} </h1>
+
+              <span>
+                <a href={url}>Rate this class</a>
+              </span>
+            </header>
+
               <h2> {classData.Name} (credits: {classData.Credit})</h2>
               <div className='RatingBar'>
                 <h3> Average Rating: </h3>
@@ -105,7 +113,4 @@ function CoursePage() {
   
   export default CoursePage;
 
-  // issues:
-  // 1. how to make ratings right-align
-  // 2. use flex container to manage individual ratings
   
