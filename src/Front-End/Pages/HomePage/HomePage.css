@@ -13,15 +13,33 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    top: 30%;
-    left: 45%;
+    top: 10%;
+    left: 42.5%; /*10% navbar -> 25vw logo in middle*/
 }
 
 #UWLogo {
-    width: 250px;
-    height: 200px;
+    /* vw based bc inside div */
+    width: 25vw; 
+    height: 25vh;
 }
 
 #SearchBar {
     padding: 10px;
+    height: 5vh;
 }
+
+/* Popular pages addition */
+.popularPages {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    top: 50%;
+    left: 25%;
+    width: 60vw; 
+    height: 45vh;
+}
+

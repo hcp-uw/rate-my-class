@@ -33,6 +33,11 @@ function HomePage() {
             <button type="submit">Search</button>
           </form>
         </div>
+        <div class="popularPages">
+        <div>CSE 142</div>
+        <div>CSE 143</div>
+        <div>ARCH 150</div>
+        </div>
       </div>
     );
   }
