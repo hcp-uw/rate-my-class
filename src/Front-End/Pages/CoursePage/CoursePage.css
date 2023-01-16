@@ -82,7 +82,7 @@
     left: 50%;
 }
 
-.Reviews > body {
+.Reviews > div {
     margin-bottom: 5px;
     border-style: ridge;
     border-radius: 5px;

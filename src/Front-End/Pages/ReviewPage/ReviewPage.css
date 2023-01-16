@@ -18,16 +18,25 @@
     right: 5%
 }
 
-.Page > form > input[type=text] {
-    width: 50%;
+.Page > input[placeholder="your name..."] {
+    width: 10%;
     padding: 1.0%;
-    margin: 1%;
     border: 0;
     border-radius: 10px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 
-.Page > form > button {
+.Page > input[placeholder="type your review here..."] {
+    width: 50%;
+    height: 20%;
+    padding: 1.0%;
+    margin-right: 1%;
+    border: 0;
+    border-radius: 10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.Page > button {
   /* remove default behavior */
   appearance:none;
   -webkit-appearance:none;

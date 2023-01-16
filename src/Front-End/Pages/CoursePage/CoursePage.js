@@ -26,17 +26,16 @@ function CoursePage() {
 
     // @param review: the "Reviews" table data inside course
     const individualReview = (review) => {
-      var nameLen = 60 - review.User.length
-      var alignment = nameLen + "%"
-      // console.log(alignment)
+      var nameLen = 60 - review.User.length;
+      var alignment = nameLen + "%";
 
       return (
-        <body> 
+        <div> 
           <b>{review.User}</b> 
           <Rating sx={{color: 'secondary.main', left: alignment}} name="half-rating-read" 
                 defaultValue={review.Rating} precision={1.0} readOnly />
           <p>{review.ReviewText}</p>
-        </body>
+        </div>
       )
     }
 
@@ -98,7 +97,7 @@ function CoursePage() {
               </div>
 
                 <h3> Description: </h3>
-                <body> {classData.Description} </body>
+                {classData.Description}
 
               <div className='GradeDistribute'>
                   <h4> Grade Distribution: </h4>
