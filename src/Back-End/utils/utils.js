@@ -1,4 +1,4 @@
-import { ref, get} from "firebase/database";
+import { ref, get, set } from "firebase/database";
 import { database } from "./index.js";
 
 // Returns all Data passed through the queryString
@@ -8,4 +8,15 @@ export async function getData(queryString) {
   const qResult = await get(query);
   const data = qResult.val();
   return data;
+}
+
+export async function writeData(star, userName, review, classID, isTest) {
+  var test = "";
+  if (isTest)  test = 'Test/'
+
+  set(ref(database, test + 'Classes/' + classID + '/Reviews/' + userName), {
+    Rating: star,
+    ReviewText: review,
+    User: userName
+  });
 }
