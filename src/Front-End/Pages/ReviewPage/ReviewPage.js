@@ -24,6 +24,7 @@ function ReviewPage() {
       .catch(e => console.log(e));
   
     const rateClass = async () => {
+      // console.log("rate class called?");
       const hash = await generateHash;
       // console.log(hash);
       await writeData(star, newName, newReview, params.classID, hash, isTest);
