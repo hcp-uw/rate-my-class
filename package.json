@@ -14,9 +14,14 @@
     "node": "^18.12.1",
     "popper.js": "^1.16.1",
     "react": "^18.2.0",
+    "react-art": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2",
-    "react-scripts": "5.0.1",
+    "react-native": "^0.71.0",
+    "react-native-hash": "^3.0.3",
+    "react-native-web": "^0.18.10",
+    "react-router-dom": "^6.6.2",
+    "react-router-native": "^6.6.2",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

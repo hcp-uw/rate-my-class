@@ -4,10 +4,12 @@ import { Rating } from '@mui/material';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { writeData } from '../../../Back-End/utils/utils.js'
+import { JSHash, CONSTANTS } from "react-native-hash";
+
 
 function ReviewPage() {
     // global for testing
-    const isTest = 1;
+    const isTest = 0;
   
     const params = useParams()
     const [star, setRating] = useState(0);
@@ -17,10 +19,16 @@ function ReviewPage() {
     // console.log("newReview: " + newReview);
     // console.log("classID: " + params.classID);
 
+    var generateHash = JSHash(newName+newReview, CONSTANTS.HashAlgorithms.sha256)
+      .then((hash) => {return hash})
+      .catch(e => console.log(e));
+  
     const rateClass = async () => {
-      await writeData(star, newName, newReview, params.classID, isTest);
+      const hash = await generateHash;
+      // console.log(hash);
+      await writeData(star, newName, newReview, params.classID, hash, isTest);
     }
-    
+
     const header = "Leave a review for " + params.classID;
     return (
       <div className="ReviewPage">

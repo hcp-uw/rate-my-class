@@ -10,11 +10,11 @@ export async function getData(queryString) {
   return data;
 }
 
-export async function writeData(star, userName, review, classID, isTest) {
+export async function writeData(star, userName, review, classID, hashedKey, isTest) {
   var test = "";
   if (isTest)  test = 'Test/'
 
-  set(ref(database, test + 'Classes/' + classID + '/Reviews/' + userName), {
+  set(ref(database, test + 'Classes/' + classID + '/Reviews/' + hashedKey), {
     Rating: star,
     ReviewText: review,
     User: userName
