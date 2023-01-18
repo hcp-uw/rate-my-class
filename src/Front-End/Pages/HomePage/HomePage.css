@@ -29,17 +29,38 @@
 }
 
 /* Popular pages addition */
-.popularPages {
+.popularPages-container {
     display: flex;
     position: absolute;
     margin: auto;
     text-align: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     top: 50%;
     left: 25%;
     width: 60vw; 
     height: 45vh;
 }
 
+.popularPages-container > div{
+    background-color: rgb(171, 108, 177);
+    margin: 1vw 1vh;
+    padding: 3vw 3vh;
+    height: 15vh;
+    width: auto;
+    font-size: 30px;
+    color: black;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(118, 90, 143);
+}
+
+.popularPages-container > div:hover{
+    background-color: rgb(171, 108, 177);
+    margin: 1vw 1vh 1vw 1vh;
+    padding: 3.5vw 2.5vh 2.5vw 3.5vh;
+    height: 15vh;
+    width: auto;
+    font-size: 30px;
+    color: blue;
+    cursor: pointer;
+}
