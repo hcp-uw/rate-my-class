@@ -82,7 +82,7 @@
     left: 50%;
 }
 
-.Reviews > body {
+.Reviews > div {
     margin-bottom: 5px;
     border-style: ridge;
     border-radius: 5px;
@@ -106,4 +106,13 @@
     justify-content: center;
     margin-right: 7%;
     margin-left: 16.87%
+}
+
+header > h1 { display: inline-block; }
+
+header span { 
+    margin-left: 50px; 
+    text-decoration: underline;
+    color: blueviolet;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
