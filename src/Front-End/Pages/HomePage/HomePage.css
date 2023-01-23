@@ -1,20 +1,36 @@
 .HomePage {
     width: 100vw;
     min-height: 100vh;
-    background-color: rgb(230, 213, 251);
+    background-image: linear-gradient(
+    230deg,
+    hsl(296deg 62% 56%) 0%,
+    hsl(290deg 53% 53%) 11%,
+    hsl(284deg 46% 49%) 22%,
+    hsl(278deg 45% 45%) 33%,
+    hsl(272deg 44% 41%) 44%,
+    hsl(266deg 43% 37%) 56%,
+    hsl(260deg 42% 32%) 67%,
+    hsl(253deg 42% 27%) 78%,
+    hsl(247deg 42% 23%) 89%,
+    hsl(240deg 42% 18%) 100%
+    );
+    /* background-color: #1a1a40; */
+    /* background-color: #CB4AD4; */
+    /* original background-color: rgb(230, 213, 251); */
     background-size: cover;
 }
 
-.Center {
+.center-search {
     display: flex;
-    position: absolute;
+    position: relative;
     margin: auto;
     text-align: center;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    top: 10%;
-    left: 42.5%; /*10% navbar -> 25vw logo in middle*/
+    padding-top: 10vh;
+    max-width: 250px;
+    left: 5%; /*10% navbar -> relative + justify center*/
 }
 
 #UWLogo {
@@ -34,8 +50,10 @@
     position: absolute;
     margin: auto;
     text-align: center;
+    align-items: center;
     flex-direction: row;
-    top: 50%;
+    justify-content: center;
+    top: 40%;
     left: 25%;
     width: 60vw; 
     height: 45vh;

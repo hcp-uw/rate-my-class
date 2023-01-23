@@ -38,7 +38,7 @@ function HomePage() {
     return (
       <div className="HomePage">
         <NavBar/>
-        <div className='Center'>
+        <div className='center-search'>
           <img src={logo} alt="Logo" id='UWLogo'/>
           <form action="/" method="get" id='SearchBar' onSubmit={searchHandler}>
             <input
@@ -51,6 +51,7 @@ function HomePage() {
             <button type="submit">Search</button>
           </form>
         </div>
+        
         <div class="popularPages-container">
           <div onClick={routeChange1}>CSE142</div>
           {/* document.getElementById("stuff").textContent */}
