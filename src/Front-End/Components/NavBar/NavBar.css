@@ -1,5 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
+  /* original background-color: rgb(124, 33, 167); */
   /* background-image: linear-gradient(
     250deg,
     hsl(311deg 79% 58%) 0%,
