@@ -36,6 +36,7 @@
 #UWLogo {
     /* vw based bc inside div */
     width: 25vw; 
+    max-width: 250px;
     height: 25vh;
 }
 
@@ -59,26 +60,31 @@
     height: 45vh;
 }
 
-.popularPages-container > div{
+.popularPages-container > div {
+    text-align: center;
     background-color: rgb(171, 108, 177);
     margin: 1vw 1vh;
     padding: 3vw 3vh;
-    height: 15vh;
-    width: auto;
-    font-size: 30px;
+    height: 10vh;
+    width: 20vw;
+    max-width: 200px;
+    font-size: 35px; /*Font size doesn't increase text box size*/
+    font-weight: bold;
     color: black;
     border-style: solid;
     border-radius: 10px;
     border-color: rgb(118, 90, 143);
+    box-shadow: 0 9px #999;
 }
 
 .popularPages-container > div:hover{
-    background-color: rgb(171, 108, 177);
-    margin: 1vw 1vh 1vw 1vh;
-    padding: 3.5vw 2.5vh 2.5vw 3.5vh;
-    height: 15vh;
-    width: auto;
-    font-size: 30px;
-    color: blue;
+    background-color: rgb(146, 89, 151);
     cursor: pointer;
+}
+
+.popularPages-container > div:active{
+    background-color: rgb(146, 89, 151);
+    cursor: pointer;
+    transform: translateY(4px);
+    box-shadow: 0 5px #999;
 }
