@@ -14,7 +14,7 @@ export async function writeData(star, userName, review, classID, hashedKey, isTe
   var test = "";
   if (isTest)  test = 'Test/'
   console.log("gere")
-  set(ref(database, test + 'Classes/' + classID + '/Reviews/' + userName), {
+  set(ref(database, test + 'Classes/' + classID + '/Reviews/' + hashedKey), {
     Rating: star,
     ReviewText: review,
     User: userName
