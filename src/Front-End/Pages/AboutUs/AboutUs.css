@@ -1,7 +1,7 @@
 .AboutUs {
     width: 100vw;
     min-height: 100vh;
-    background-color: rgb(230, 213, 251);
+    background-color: rgb(210, 133, 224);
     background-size: cover;
 }
 
@@ -16,19 +16,21 @@
 }
 
 .flex-container > div {
-    background-color: rgb(225, 224, 214);
+    background-color: rgb(90, 40, 97);
     border-style: solid;
     border-radius: 20px;
-    border-color: rgb(124, 33, 167);
+    border-color: rgb(142, 64, 179);
     border-width: 4px;
     /* Top right bottom left */
-    margin: 1vh 1vw 1vh 1vw;
+    /* margin: 0.5vh 0.5vw; */
+    margin: 2px 2px;
     padding: 1vw;
     width: 18vw;
     height: 32vh;
     text-align: center;
     font-family: georgia;
     font-size: 26px;
+    color: white;
 }
 
 .aboutUsPersonHeader {
@@ -36,6 +38,7 @@
     font-weight: bolder;
     margin-top: 1.5vh;
     margin-bottom: 1vh;
+    font-size: 3vw;
 }
 .aboutUsPersonSubtext {
     position: relative;
@@ -61,6 +64,12 @@
     display: none;
 }
 
+
+#meetOurTeam {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    color: white;
+}
 
 /* .Center {
     display: flex;
