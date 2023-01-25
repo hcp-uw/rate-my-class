@@ -4,43 +4,56 @@ import { Rating } from '@mui/material';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { writeData } from '../../../Back-End/utils/utils.js'
-import { JSHash, CONSTANTS } from "react-native-hash";
+import { Alert } from '@mui/material';
 
 
 function ReviewPage() {
     // global for testing
-    const isTest = 0;
-  
+    const isTest = 1;
     const params = useParams()
     const [star, setRating] = useState(0);
     const [newName, setName] = useState("");
     const [newReview, setReview] = useState("");
+    const [show, setShow] = useState(false);
     // console.log("newName: " + newName);
     // console.log("newReview: " + newReview);
     // console.log("classID: " + params.classID);
 
-    var generateHash = JSHash(newName+newReview, CONSTANTS.HashAlgorithms.sha256)
-      .then((hash) => {return hash})
-      .catch(e => console.log(e));
-  
-    const rateClass = async () => {
-      // console.log("rate class called?");
-      const hash = await generateHash;
-      // console.log(hash);
-      await writeData(star, newName, newReview, params.classID, hash, isTest);
+    const rateClass = async (e) => {
+      await writeData(star, newName, newReview, params.classID, isTest);
+      e.preventDefault();
+      setShow(true)
+      setName(" ");
+      setReview(" ");
+      setRating(0);
     }
 
     const header = "Leave a review for " + params.classID;
+    if (show) {
+      return (
+        <div className="ReviewPage">
+          <div className='Page'>
+          <Alert variant="filled" severity="success">
+        Successfully Submitted Review!
+        </Alert>
+          </div>
+    </div>
+    )
+    } else {
+
+    
     return (
       <div className="ReviewPage">
         <NavBar/>
         <div className='Page'>
+          <form onSubmit={rateClass}>
             <h1>{header}</h1>
             <h3>Username:</h3>
               <input
                 type="text"
                 onChange={e => setName(e.target.value)}
                 placeholder="your name..."
+                value={newName}
               />
 
             <h3>
@@ -59,12 +72,14 @@ function ReviewPage() {
               type="text"
               onChange={e => setReview(e.target.value)}
               placeholder="type your review here..."
+              value={newReview}
             />
             <p></p>
-            <button onClick={rateClass}>Submit</button>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
-    );
+    ); }
   }
   
   export default ReviewPage;

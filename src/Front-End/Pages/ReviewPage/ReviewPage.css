@@ -66,3 +66,7 @@
 #SearchBar {
     padding: 10px;
 }
+
+button:active{
+    background-color: #a167c5;
+}
