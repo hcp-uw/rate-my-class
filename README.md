@@ -3,7 +3,7 @@
 ## Website link 
 https://rate-my-class.web.app/
 
-### Courses support searching now:
+### Courses currently supported by Search
 CSE142, CSE143, ARCH150
 
 ## Description
