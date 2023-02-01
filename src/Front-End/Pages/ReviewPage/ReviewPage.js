@@ -19,15 +19,18 @@ function ReviewPage() {
     // console.log("newReview: " + newReview);
     // console.log("classID: " + params.classID);
 
+    var hashed = cyrb53((newName + newReview + star), 1);
+    console.log("hash: " + hashed);
+
     const rateClass = async (e) => {
-      await writeData(star, newName, newReview, params.classID, isTest);
+      await writeData(star, newName, newReview, params.classID, hashed, isTest);
       e.preventDefault();
       setShow(true)
       setName(" ");
       setReview(" ");
       setRating(0);
     }
-    
+
     const header = "Leave a review for " + params.classID;
     if (show) {
       return (
@@ -37,10 +40,9 @@ function ReviewPage() {
         Successfully Submitted Review!
         </Alert>
           </div>
-    </div>
-    )
+      </div>
+      )
     } else {
-
     
     return (
       <div className="ReviewPage">
@@ -81,5 +83,22 @@ function ReviewPage() {
       </div>
     ); }
   }
+
+// hashing function
+// credit: https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
+const cyrb53 = (str, seed = 0) => {
+  let h1 = 0xdeadbeef ^ seed,
+    h2 = 0x41c6ce57 ^ seed;
+  for (let i = 0, ch; i < str.length; i++) {
+    ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
   
-  export default ReviewPage;
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+};
+  
+export default ReviewPage;
