@@ -89,7 +89,8 @@ function CoursePage() {
       const url = "/rate/" + params.classID;
 
       // for some reason rendered twice, therefore divide by 2
-      const averageRating = (ratingTotal.current/2)/ratingCount.current * 1.0;
+      // console.log("total: " + ratingTotal.current);
+      const averageRating = (ratingTotal.current)/(ratingCount.current) * 1.0;
       return (
         <div className="SearchTest">
           <NavBar/>
