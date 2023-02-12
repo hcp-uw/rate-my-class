@@ -1,6 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
-  /* original background-color: rgb(124, 33, 167); */
+  background-color: rgb(41, 41, 41);
   /* background-image: linear-gradient(
     250deg,
     hsl(311deg 79% 58%) 0%,
@@ -14,45 +14,115 @@
     hsl(271deg 98% 43%) 89%,
     hsl(263deg 94% 44%) 100%
   ); */
-  background-color: #a636ae;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
+
+  /* background-color: #a636ae; */
+  /* position: fixed;
   left: 0;
   top: 0;
   z-index: 1;
-  /* width: 10%;
-  max-width: 150px; */
-  width: 95px;
-  height: 100%;
-  border-top-right-radius: 15px;
+  max-width: 150px;
+  right: 20; */
+
+  width: 100%;
+  height: 70px;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  border-style: solid;
+  /* border-style: solid;
   border-color:rgb(129, 26, 136);
-  border-width: 5px;
+  border-width: 2px; */
 }
- 
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    padding: 25px;
-    display: block;
-    width: 100%;
-    color: #f2f2f2;
-    text-align: center;
-    text-decoration: none;
-    font-size: 17px;
-  }
+
+.navtext {
+  overflow: hidden;
+  flex-wrap: warp;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 5%;
+}
+
+.navitem-login {
+  list-style: none;
+}
+
+.navitem-login li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.navitem-login li a {
+  /* padding: 0px; */
+  /* display: inline-block; */
+  width: 10%;
+  color: #f2f2f2;
+  text-align: right;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navitem {
+  margin-right: 16%;
+  list-style: none;
+}
+
+.navitem li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+/* Style the links inside the navigation bar */
+.navitem li a {
+  /* padding: 0px; */
+  color: #f2f2f2;
+  /* text-align: left; */
+  text-decoration: none;
+  font-size: 17px;
+}
   
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
+.topnav a[href="/about"] > button {
+  display: inline-block;
+  padding:10px;
+  background-color:#430093;
+  color:#fff;
+  font-weight:600;
+  border: none;
+  border-radius:5px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  /* background-color: #ddd; */
+  color: rgb(209, 140, 255);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav form {
+  margin-right: 20%;
+  margin-top: 1%;
+  align-items: center;
+}
+
+.topnav form input {
+  overflow: hidden;
+  display: flexx;
+  width: 60%;
+  padding: 5.0%;
+  border: 0;
+  border-radius: 5px;
+}
+
+.topnav form button {
+  padding:5px;
+  background-color:#430093;
+  color:#fff;
+  font-weight:600;
+  /* border: none; */
+  border-radius:5px;
+} 
+
