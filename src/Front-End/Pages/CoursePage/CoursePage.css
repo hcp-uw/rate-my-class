@@ -1,6 +1,6 @@
 .SearchTest {
     width: 100vw;
-    min-height: 100vh;
+    min-height: 200vh;
     background-color: rgb(230, 213, 251);
     background-size: cover;
 }
@@ -48,9 +48,8 @@
     flex-direction: column;
     justify-content: left;
     top: 100%;
-    left: 0%;
-    width: 45%;
-    height: 35%
+    left: 10%;
+    width: 80%;
 }
 
 #143grade {
@@ -78,8 +77,8 @@
     align-items: left;
     flex-direction: column;
     justify-content: left;
-    top: 100%;
-    left: 50%;
+    top: 350%;
+    left: 20%;
 }
 
 .Reviews > div {
