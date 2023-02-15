@@ -15,14 +15,24 @@ function CoursePage() {
     const [loading, setLoading] = useState(true);
     const data = useRef(0);  // useRef is for preserving local value
 
+    const ratingTotal = useRef(0);
+    const ratingCount= useRef(0);
+
     useEffect(() => {
       const fetchData = async () => {
         data.current = await getClassData(params.classID);
+
+        const allReviews = Object.entries(data.current.Reviews);
+        ratingCount.current = allReviews.length;
+        for (let i = 0; i < allReviews.length; i++) {
+          ratingTotal.current += allReviews[i][1].Rating;
+        }
+
         setClass(data.current)
         setLoading(false);
       }
       fetchData();
-    })
+    }, [params])  // second parameter to stop re-render loop
 
     // @param review: the "Reviews" table data inside course
     const individualReview = (review) => {
@@ -77,6 +87,10 @@ function CoursePage() {
     // display class info
     } else {
       const url = "/rate/" + params.classID;
+
+      // for some reason rendered twice, therefore divide by 2
+      // console.log("total: " + ratingTotal.current);
+      const averageRating = (ratingTotal.current)/(ratingCount.current) * 1.0;
       return (
         <div className="SearchTest">
           <NavBar/>
@@ -93,7 +107,7 @@ function CoursePage() {
               <div className='RatingBar'>
                 <h3> Average Rating: </h3>
                 <Rating sx={{color: 'secondary.main'}} name="half-rating-read" 
-                        defaultValue={classData.Rating} precision={0.5} readOnly />
+                        defaultValue={averageRating} precision={0.5} readOnly />
               </div>
 
                 <h3> Description: </h3>

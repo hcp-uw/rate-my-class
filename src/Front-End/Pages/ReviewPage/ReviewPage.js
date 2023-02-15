@@ -20,8 +20,7 @@ function ReviewPage() {
     // console.log("classID: " + params.classID);
 
     var hashed = cyrb53((newName + newReview + star), 1);
-    console.log("hash: " + hashed);
-
+  
     const rateClass = async (e) => {
       await writeData(star, newName, newReview, params.classID, hashed, isTest);
       e.preventDefault();
@@ -70,8 +69,9 @@ function ReviewPage() {
             </h3>
 
           <h3>Write your review here:</h3>
-            <input
-              type="text"
+            <textarea
+              name="textValue"
+              rows="10"
               onChange={e => setReview(e.target.value)}
               placeholder="type your review here..."
               value={newReview}
