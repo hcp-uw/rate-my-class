@@ -23,7 +23,7 @@ export async function getCourseNames(Test = "Classes/"){
 
 export async function getDev(dev){
     let data = await getData("People/" + dev);
-    return Array.from(data);
+    return data;
 }
 
 export async function getDevs(){

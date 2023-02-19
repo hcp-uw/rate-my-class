@@ -1,4 +1,4 @@
-import {getDevs} from "../API/APIEndPoints.js"
+import {getDev, getDevs} from "../API/APIEndPoints.js"
 import {assert} from 'chai';
 
 // Test case for getDevs
@@ -50,4 +50,19 @@ describe("getDevs", () => {
       ]
       assert.deepEqual(rsp, expected);
     })
+})
+
+describe("getDev", () => {
+  it('Devs Data',async () => {
+    let rsp = await getDev("Tan");
+    let expected = {
+      Fun_fact: 'Watch TLOU',
+      Grade: 'Junior',
+      Image: 'Tan.jpg',
+      Major: 'CS',
+      Name: 'Tan Nguyen',
+      Role: 'Back End'
+    }
+    assert.deepEqual(rsp, expected);
+  })
 })
