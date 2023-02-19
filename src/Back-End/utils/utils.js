@@ -11,29 +11,9 @@ export async function getData(queryString) {
 }
 
 
-export async function saveData(queryString,data) {
+export async function saveData(queryString, data) {
   const query = await ref(database, queryString);
   const qResult = await set(query,data);
-  const data = qResult.val();
-  return data;
+  const result = qResult.val();
+  return result;
 }
-// // Returns all Data passed through the queryString
-// // @Params queryString - String of the Query
-// export async function getSpecificData(queryString, attribute) {
-//   fetch("https://rate-my-class-2652f-default-rtdb.firebaseio.com/Classes.json")
-//       .then(statusCheck)
-//       .then(resp => resp.text())
-//       .then(getClasses)
-//       .catch(handleError);
-// }
-
-// function getClasses(response) {
-//   console.log(response);
-// }
-
-// async function statusCheck(res) {
-//   if (!res.ok) {
-//     throw new Error(await res.text());
-//   }
-//   return res;
-// }
