@@ -1,35 +1,10 @@
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: rgb(41, 41, 41);
-  /* background-image: linear-gradient(
-    250deg,
-    hsl(311deg 79% 58%) 0%,
-    hsl(307deg 72% 54%) 11%,
-    hsl(302deg 65% 50%) 22%,
-    hsl(297deg 71% 47%) 33%,
-    hsl(292deg 79% 46%) 44%,
-    hsl(288deg 87% 44%) 56%,
-    hsl(283deg 95% 43%) 67%,
-    hsl(278deg 98% 42%) 78%,
-    hsl(271deg 98% 43%) 89%,
-    hsl(263deg 94% 44%) 100%
-  ); */
-
-  /* background-color: #a636ae; */
-  /* position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  max-width: 150px;
-  right: 20; */
-
   width: 100%;
-  height: 70px;
+  height: 60px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  /* border-style: solid;
-  border-color:rgb(129, 26, 136);
-  border-width: 2px; */
 }
 
 .navtext {
@@ -38,90 +13,69 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0px 5%;
 }
 
-.navitem-login {
-  list-style: none;
+/* remove default ul indentation and bullet points */
+ul {
+  padding: 0;
+  list-style-type: none;
 }
 
-.navitem-login li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-
-.navitem-login li a {
-  /* padding: 0px; */
-  /* display: inline-block; */
-  width: 10%;
-  color: #f2f2f2;
-  text-align: right;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.navitem {
-  margin-right: 16%;
-  list-style: none;
-}
-
+/* Style the links inside the navigation bar */
 .navitem li {
   display: inline-block;
   padding: 0 20px;
 }
 
-/* Style the links inside the navigation bar */
 .navitem li a {
-  /* padding: 0px; */
   color: #f2f2f2;
-  /* text-align: left; */
   text-decoration: none;
   font-size: 17px;
 }
-  
-.topnav a[href="/about"] > button {
-  display: inline-block;
-  padding:10px;
-  background-color:#430093;
-  color:#fff;
-  font-weight:600;
-  border: none;
-  border-radius:5px;
+
+.login-signup > a {
+  padding-left: 15px;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  /* background-color: #ddd; */
-  color: rgb(209, 140, 255);
+  color: #ca9eff;
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-.topnav form {
-  margin-right: 20%;
-  margin-top: 1%;
-  align-items: center;
-}
-
-.topnav form input {
-  overflow: hidden;
-  display: flexx;
-  width: 60%;
-  padding: 5.0%;
-  border: 0;
-  border-radius: 5px;
-}
-
-.topnav form button {
-  padding:5px;
+button {
+  display: inline-block;
+  appearance:none;
+  -webkit-appearance:none;
+  padding: 7.5px;
   background-color:#430093;
   color:#fff;
   font-weight:600;
-  /* border: none; */
+  font-size: 16px;
+  border: none;
   border-radius:5px;
+}
+
+button:hover {
+  background-color:#ca9eff;
+  color:rgb(0, 0, 0);
 } 
+
+.search-box input {
+  width: 350px;
+  height: 23px;
+  padding: 5px;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 3.5px;
+}
+
+/* .topnav a:active {
+  background-color: #430093;
+  color: white;
+} */
