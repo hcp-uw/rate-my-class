@@ -1,11 +1,11 @@
 .SearchTest {
     width: 100vw;
-    min-height: 100vh;
-    background-color: rgb(230, 213, 251);
+    height: 150vw;
+    background-color: #FFF5DD;
     background-size: cover;
 }
 
-.Page {
+/* .SearchTest > Page {
     display: flex;
     position: absolute;
     margin: auto;
@@ -13,16 +13,15 @@
     align-items: left;
     flex-direction: column;
     justify-content: left;
-    top: 8%;
-    left: 15%;
+    top: 100%;
+    left: 5%;
     right: 5%
-}
+} */
 
 .Title h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 70px;
     text-align: left;
-    margin: 0.0
 }
 
 .Title h2 {
@@ -49,7 +48,7 @@
     justify-content: left;
     top: 100%;
     left: 0%;
-    width: 45%;
+    width: 80%;
     height: 35%
 }
 
@@ -78,8 +77,7 @@
     align-items: left;
     flex-direction: column;
     justify-content: left;
-    top: 100%;
-    left: 50%;
+    top: 350%;
 }
 
 .Reviews > div {
