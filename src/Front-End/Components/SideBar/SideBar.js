@@ -14,9 +14,9 @@ function Sidebar(props) {
 return(
     <div>
         <ul id={show ? "sidebar.active" : "sidebar"} >
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us!</a></li>
-            <li><a href="/about">Feedback</a></li>
+            <li><a href="/" className="listItems">Home</a></li>
+            <li><a href="/about" className="listItems">About Us!</a></li>
+            <li><a href="/about" className="listItems">Feedback</a></li>
             </ul>
     </div>
     )
