@@ -24,23 +24,26 @@ function NavBar() {
           <li><a href="/about">About Us!</a></li>
           <li><a href="/about">Feedback</a></li>
         </ul>
-        
-        <form action="/" method="get" id='SearchBar' onSubmit={searchHandler}>
-          <input
-            type="text"
-            onChange={e => setQuery(e.target.value)}
-            id="header-search"
-            placeholder="Search for classes"
-            name="s" 
-          />
-          <button type="submit">Search</button>
-        </form>
 
-        <ul className="navitem-login">
-          <li><a href="/about">Log in</a></li>
-        </ul>
-      
-        <a href="/about"> <button style={{paddingRight: 20}}>Sign up</button></a>
+        <div className="search-box">
+          <form action="/" method="get" id='SearchBar' onSubmit={searchHandler}>
+            <input
+              type="text"
+              onChange={e => setQuery(e.target.value)}
+              id="header-search"
+              placeholder="Search for classes"
+              name="s" 
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div> 
+
+
+        <div className="login-signup">
+          <a href="/about">Log in</a>
+          <a href="/about"> <button style={{paddingRight: 10}}>Sign up</button></a>
+        </div>
+
       </div>
     </div>
   );

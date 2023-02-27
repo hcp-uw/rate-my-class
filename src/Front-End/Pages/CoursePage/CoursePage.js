@@ -59,7 +59,7 @@ function CoursePage() {
 
       return (
         <div className="Reviews">
-            <h4> Reviews: </h4>
+            <h4> Reviews </h4>
             {reviewArr.map((obj) => individualReview(obj))}
         </div>
       )
@@ -110,11 +110,11 @@ function CoursePage() {
                         defaultValue={averageRating} precision={0.5} readOnly />
               </div>
 
-                <h3> Description: </h3>
+                <h3> Description </h3>
                 {classData.Description}
 
               <div className='GradeDistribute'>
-                  <h4> Grade Distribution: </h4>
+                  <h4> Grade Distribution </h4>
                   <img src={grade} alt="Grade" id='143grade'/>
               </div>
               {renderReviews()}
