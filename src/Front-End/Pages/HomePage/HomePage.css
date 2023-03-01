@@ -22,21 +22,16 @@
 
 .center-search {
     display: flex;
-    position: relative;
-    margin: auto;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
     justify-content: center;
-    padding-top: 10vh;
-    max-width: 250px;
 }
 
 #UWLogo {
     /* vw based bc inside div */
+    position:absolute;
     width: 25vw; 
     max-width: 250px;
     height: 25vh;
+    bottom: 400px;
 }
 
 #SearchBar {

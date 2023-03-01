@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from '@mui/material';
 import Sidebar from '../SideBar/SideBar';
+
 function NavBar() {
   const [query, setQuery] = useState("");
   const [width, setWidth] = useState(window.innerWidth)
@@ -33,7 +34,26 @@ function NavBar() {
     };
   })
 
-  const isMobile = width <= 1200;
+  const renderSearchBar = (width) => {
+    var name = "search-box";
+    if (width < 600) name = "search-box-mini";
+    return (
+      <div className={name}>
+        <form action="/" method="get" id='SearchBar' onSubmit={searchHandler}>
+          <input
+            type="text"
+            onChange={e => setQuery(e.target.value)}
+            id="header-search"
+            placeholder="Search for classes"
+            name="s" 
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    )
+  }
+
+  const isMobile = width <= 1050;
 
   if (isMobile) {
     return(
@@ -49,18 +69,7 @@ function NavBar() {
             >
               <MenuIcon sx={{ color: "white", fontSize: 40 }}/>
           </IconButton>
-            <div className="search-box">
-              <form action="/" method="get" id='SearchBar' onSubmit={searchHandler}>
-                <input
-                  type="text"
-                  onChange={e => setQuery(e.target.value)}
-                  id="header-search"
-                  placeholder="Search for classes"
-                  name="s" 
-                />
-                <button type="submit">Search</button>
-              </form>
-            </div> 
+            {renderSearchBar(width)}
           </div>
         </div>
         <Sidebar
@@ -78,21 +87,7 @@ function NavBar() {
           <li><a href="/about">About Us!</a></li>
           <li><a href="/about">Feedback</a></li>
         </ul>
-
-        <div className="search-box">
-          <form action="/" method="get" id='SearchBar' onSubmit={searchHandler}>
-            <input
-              type="text"
-              onChange={e => setQuery(e.target.value)}
-              id="header-search"
-              placeholder="Search for classes"
-              name="s" 
-            />
-            <button type="submit">Search</button>
-          </form>
-        </div> 
-
-
+        {renderSearchBar(width)}
         <div className="login-signup">
           <a href="/about">Log in</a>
           <a href="/about"> <button style={{paddingRight: 10}}>Sign up</button></a>

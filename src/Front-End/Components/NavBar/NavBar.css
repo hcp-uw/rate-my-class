@@ -75,6 +75,16 @@ button:hover {
   margin-top: 3.5px;
 }
 
+.search-box-mini input {
+  width: 60%;
+  height: 23px;
+  padding: 5px;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 3.5px;
+}
+
 /* .topnav a:active {
   background-color: #430093;
   color: white;
