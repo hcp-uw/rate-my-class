@@ -12,6 +12,8 @@ return(
             <li><a href="/">Home</a></li>
             <li><a href="/about">About Us!</a></li>
             <li><a href="/about">Feedback</a></li>
+            <li><a href="/about">Log in</a></li>
+            <li><a href="/about">Sign up</a></li>
         </ul>
     </div>
     )
