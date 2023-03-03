@@ -36,7 +36,6 @@ function NavBar() {
 
   const renderSearchBar = (width) => {
     var name = "search-box";
-    if (width < 600) name = "search-box-mini";
     return (
       <div className={name}>
         <form action="/" method="get" id='SearchBar' onSubmit={searchHandler}>
@@ -57,25 +56,23 @@ function NavBar() {
 
   if (isMobile) {
     return(
-      <div>
-        <div className="topnav">
-          
-          <div className="navtext">
+      <div className="topnav">
+
+        <div className="mobileNavText">
           <IconButton
             color="primary"
             aria-label="menu"
             className="header-menu"
             onClick={showSideBar}
-            >
-              <MenuIcon sx={{ color: "white", fontSize: 40 }}/>
+          >
+            <MenuIcon sx={{ color: "white", fontSize: 40 }} />
           </IconButton>
-            {renderSearchBar(width)}
-          </div>
+          {renderSearchBar(width)}
         </div>
         <Sidebar
-          show={showSide}
-          />
+          show={showSide} />
       </div>
+      
     )
   }
   return (

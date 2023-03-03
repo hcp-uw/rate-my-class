@@ -15,8 +15,27 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 5%;
+  align-self: center;
 }
 
+.mobileNavText {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px 5%;
+  align-self: center;
+}
+
+.mobileNavText .search-box {
+  padding-left: 25vw;
+}
+
+.mobileNavText .search-box-mini {
+  padding-left: 25vw;
+}
+.header-menu {
+  padding-right: 20px;
+}
 /* remove default ul indentation and bullet points */
 ul {
   padding: 0;
@@ -66,7 +85,7 @@ button:hover {
 } 
 
 .search-box input {
-  width: 350px;
+  width: 31vw;
   height: 23px;
   padding: 5px;
   border: 0;
