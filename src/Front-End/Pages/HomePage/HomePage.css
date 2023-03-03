@@ -18,45 +18,37 @@
     /* background-color: #CB4AD4; */
     /* original background-color: rgb(230, 213, 251); */
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .center-search {
+    top: 60px;
+    padding-top: 20vh;
+    position: fixed;
     display: flex;
-    position: relative;
-    margin: auto;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 10vh;
-    max-width: 250px;
+    height: max(25vh,200px);
 }
 
 #UWLogo {
+    margin-top: auto;
     /* vw based bc inside div */
-    width: 25vw; 
-    max-width: 250px;
-    height: 25vh;
-}
-
-#SearchBar {
-    padding: 10px;
-    height: 5vh;
+    width: max(20vw,250px);
+   
 }
 
 /* Popular pages addition */
 .popularPages-container {
     display: flex;
-    position: absolute;
+    position: fixed;
     margin: auto;
-    text-align: center;
     align-items: center;
-    flex-direction: row;
     justify-content: center;
     top: 40%;
-    left: 20%;
     width: 60vw; 
     height: 45vh;
+    padding-top: 100px;
 }
 
 .popularPages-container > div {
@@ -67,7 +59,7 @@
     height: 10vh;
     width: 20vw;
     max-width: 200px;
-    font-size: 35px; /*Font size doesn't increase text box size*/
+    font-size: 3vw; /*Font size doesn't increase text box size*/
     font-weight: bold;
     color: black;
     border-style: solid;
@@ -86,4 +78,9 @@
     cursor: pointer;
     transform: translateY(4px);
     box-shadow: 0 5px #999;
+}
+
+
+html {
+    scroll-behavior: smooth;
 }
