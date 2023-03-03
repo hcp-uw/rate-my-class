@@ -1,27 +1,31 @@
-#sidebar {
+.sidebar {
     background-color: rgb(41, 41, 41);
-    width: 250px;
-    padding-top: 65px;
-    height: 100vh;
+    width: 16%;
+    padding-top: 20px;
+    height: 91vh;
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: -100%;
     transition: 850ms;
     z-index: 1;
+    border-bottom-right-radius: 15px;
+    border-width: 5px;
 }
 
-#sidebar.active {
+.sidebar.active {
     left: 0;
     transition: 350ms;
 }
 
-.listItems {
-    background-color: rgb(41, 41, 41);
-    color: #f2f2f2;
+.listItems > li > a {
     text-decoration: none;
     font-size: 17px;
+    padding: 20px;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
 }
 
 .listItems:hover {
