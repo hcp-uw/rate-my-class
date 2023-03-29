@@ -1,3 +1,7 @@
+.AboutUsText{
+  text-align: center;
+}
+
 .flip-card {
     background-color: transparent;
     width: 300px;
@@ -72,6 +76,7 @@
 
 .AboutUs {
     width: 100vw;
+    
     min-height: 100vh;
     background-color: #FFF5DD;
     background-size: cover;

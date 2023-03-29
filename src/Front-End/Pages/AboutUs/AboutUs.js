@@ -60,6 +60,15 @@ function AboutUs() {
             <h1 id="meetOurTeam">Meet our Team</h1>
           </div>
           {renderTeam()}
+          <div class="AboutUsText">
+            <h1>Our Mission</h1>
+            <p>We Understand the struggle <strong>EVERY SINGLE QUARTER. WE WANT CHANGE. WE WANT IT NOW.
+              <br/>
+              FOR COLLEGE STUDENTS! BY COLLEGE STUDENTS! AGAINST COLLEGE STUDENTS.</strong>
+               We want UW students to see just how much money they're wasting and where!
+              </p>
+          </div>
+
         </div>
       )
   }
