@@ -56,10 +56,6 @@ function AboutUs() {
         <div className="AboutUs">
           <NavBar/>
           {/* Minimize this div */}
-          <div class="flex-container"> 
-            <h1 id="meetOurTeam">Meet our Team</h1>
-          </div>
-          {renderTeam()}
           <div class="AboutUsText">
             <h1>Our Mission</h1>
             <p>We Understand the struggle <strong>EVERY SINGLE QUARTER. WE WANT CHANGE. WE WANT IT NOW.
@@ -68,6 +64,11 @@ function AboutUs() {
                We want UW students to see just how much money they're wasting and where!
               </p>
           </div>
+          <div class="flex-container"> 
+            <h1 id="meetOurTeam">Meet our Team</h1>
+          </div>
+          {renderTeam()}
+          
 
         </div>
       )
