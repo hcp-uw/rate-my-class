@@ -48,12 +48,12 @@
   
   /* Style the back side */
   .flip-card-back {
-    background-color: rgb(142, 64, 179);
+    background-color: rgb(73, 73, 73);
     border-radius: 20px;
     border-style: solid;
-    border-color: rgb(90, 40, 97);
+    border-color: rgb(41, 41, 41);
 
-    color: white;
+    color: #FFF5DD;
     transform: rotateY(180deg);
   }
 
