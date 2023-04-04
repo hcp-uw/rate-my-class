@@ -86,8 +86,8 @@ function NavBar() {
         </ul>
         {renderSearchBar(width)}
         <div className="login-signup">
-          <a href="/about">Log in</a>
-          <a href="/about"> <button style={{paddingRight: 10}}>Sign up</button></a>
+          <a href="/signin">Log in</a>
+          <a href="/signin"> <button style={{paddingRight: 10}}>Sign up</button></a>
         </div>
 
       </div>
