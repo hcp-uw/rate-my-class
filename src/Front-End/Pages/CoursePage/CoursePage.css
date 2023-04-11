@@ -14,6 +14,8 @@ html, body {
     background-color: #FFF5DD;
     background-size: cover;
     margin: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+
 }
 
 .Page{
@@ -82,7 +84,7 @@ p {
     margin-right: 10px;
 }
 
-.Reviews > div {
+.IndividualReview {
     margin-bottom: 5px;
     border-style: ridge;
     border-radius: 5px;
@@ -93,10 +95,39 @@ p {
     min-width: 100px;
     overflow: hidden;
     text-overflow: wrap;
-    height: 300px;
+    height: 200px;
     flex-wrap: wrap;
     overflow: visible;
     word-wrap: break-word;
+}
+@keyframes fadeInLeft {
+    0% {transform: translate3d(100vw, 0, 0)}
+    100% {transform: translate3d(0, 0, 0)}
+}
+
+@keyframes fadeInRight {
+    0% {transform: translate3d(-100vw, 0, 0)}
+    100% {transform: translate3d(0, 0, 0)}
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+.fade-exit{
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
 }
 span{
     font-size: 30px;
@@ -135,4 +166,11 @@ span{
 #reviewCount{
     text-decoration: none;
     font-size: 18px;
+}
+
+.center-container {
+    position: absolute;
+    padding: 0;
+    top: 50%;
+    left: 50%;
 }

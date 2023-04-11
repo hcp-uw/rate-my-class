@@ -5,16 +5,15 @@ import { useParams } from 'react-router-dom'
 import { getClassData } from '../../../Back-End/API/APIEndPoints';
 import { useEffect, useState, useRef } from 'react';
 import { Pagination,CircularProgress } from '@mui/material';
-
-
 function CoursePage() {
     const params = useParams()
 
     const [classData, setClass] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
     const [currentReviews, setCurrentReviews] = useState([]);
     const data = useRef(0);  // useRef is for preserving local value
-
+    var lastPage = useRef(1);
     const ratingTotal = useRef(0);
     const ratingCount= useRef(0);
     useEffect(() => {
@@ -33,34 +32,45 @@ function CoursePage() {
           reviewArr.push(review[1])
         })
         setCurrentReviews(reviewArr.slice(0,2));
-
+        console.log("Here")
       }
       fetchData();
     }, [params])  // second parameter to stop re-render loop
 
     // @param review: the "Reviews" table data inside course
     const individualReview = (review) => {
+      var currAnimation;
+      if (currentPage > lastPage.current) {
+        currAnimation = 'fadeInLeft 0.7s'
+      } else if (currentPage < lastPage.current) {
+        currAnimation = 'fadeInRight 0.7s'
+      } else {
+        currAnimation = 'fadeIn 0.7s'
+      }
       return (
-        <div> 
-          <div className='ReviewStars'>
-            <b className='UserTitle'>{review.User}</b> 
-            <Rating sx={{color: 'secondary.main'}} 
-                      value={review.Rating} precision={1.0} readOnly />
+          <div key = {review.User} className='IndividualReview' style={{animation: currAnimation}} > 
+            <div className='ReviewStars'>
+              <b className='UserTitle'>{review.User}</b> 
+              <Rating sx={{color: 'secondary.main'}} 
+                        value={review.Rating} precision={1.0} readOnly />
+            </div>
+            <p className='ReviewText'>{review.ReviewText}</p>
           </div>
-          <p className='ReviewText'>{review.ReviewText}</p>
-        </div>
       )
     }
 
     const handleReviewChange = (event, value) => {
       const allReviews = Object.entries(classData.Reviews);
       const reviewArr = []
+      setCurrentPage(value)
       allReviews.forEach((review)=>{
         reviewArr.push(review[1])
       })
       const index_start = (value-1) * 2
-      const index_end = (value-1) * 2 + 1
+      const index_end = index_start + 1
       setCurrentReviews(reviewArr.slice(index_start,index_end+1));
+      lastPage.current = currentPage
+
     };
 
     const renderReviews = () => {
@@ -75,15 +85,16 @@ function CoursePage() {
       return (
         
         <div className="Reviews">
-            <p> Reviews <span id="reviewCount">({reviewArr.length})</span><a href={url} id="RateClassButton">Rate this class</a></p>
+            <p> Reviews <span id="reviewCount">({reviewArr.length})</span><a href={url} id="RateClassButton">Rate this class</a></p> 
             {currentReviews.map((obj) => individualReview(obj))}
-            <Pagination count={Math.ceil((reviewArr.length/2))} color="secondary" onChange={handleReviewChange} />
+            <Pagination id="pagination" count={Math.ceil((reviewArr.length/2))} color="secondary" onChange={handleReviewChange} />
         </div>
       )
     }
     
     // class not found
-    if (classData == null) {
+    
+    if (classData.length === 0) {
       return (
         <div className="CoursePage">
           <NavBar/>
@@ -96,9 +107,12 @@ function CoursePage() {
     // class info is loading
     } else if (loading) {
       return (
-        <div className="center-container">
-          <CircularProgress size={100} style={{alignSelf: "center"}}/>
+        <div className='CoursePage'>
+          <div className="center-container">
+            <CircularProgress size={100} style={{alignSelf: "center"}}/>
+          </div>
         </div>
+
       )
     
     // display class info
