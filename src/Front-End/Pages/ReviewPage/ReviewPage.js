@@ -1,8 +1,9 @@
 import './ReviewPage.css'
 import NavBar from '../../Components/NavBar/NavBar.js';
 import { Rating } from '@mui/material';
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import { useParams } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import { writeData } from '../../../Back-End/utils/utils.js'
 import { Alert } from '@mui/material';
 
@@ -10,15 +11,14 @@ import { Alert } from '@mui/material';
 function ReviewPage() {
     // global for testing
     const isTest = 1;
+    const { userName } = useContext(UserContext);
     const params = useParams()
     const [star, setRating] = useState(0);
-    const [newName, setName] = useState("");
+    const [newName, setName] = useState(userName);
     const [newReview, setReview] = useState("");
     const [show, setShow] = useState(false);
-    // console.log("newName: " + newName);
-    // console.log("newReview: " + newReview);
-    // console.log("classID: " + params.classID);
 
+    
     var hashed = cyrb53((newName + newReview + star), 1);
   
     const rateClass = async (e) => {
@@ -28,6 +28,28 @@ function ReviewPage() {
       setName(" ");
       setReview(" ");
       setRating(0);
+    }
+
+    const renderName = (userName) => {
+      if (userName.trim() !== "") {
+        return (
+          <div>
+            <h3>As <u>{userName}</u></h3>
+          </div>)
+        ;
+      }
+  
+      return (
+        <div>
+          <h3>Username:</h3>
+          <input
+            type="text"
+            onChange={e => setName(e.target.value)}
+            placeholder="your name..."
+            value={newName}
+          />
+        </div>
+      );
     }
 
     const header = "Leave a review for " + params.classID;
@@ -49,13 +71,14 @@ function ReviewPage() {
         <div className='Page'>
           <form onSubmit={rateClass}>
             <h1>{header}</h1>
-            <h3>Username:</h3>
+            {renderName(userName)}
+            {/* <h3>Username:</h3>
               <input
                 type="text"
                 onChange={e => setName(e.target.value)}
                 placeholder="your name..."
                 value={newName}
-              />
+              /> */}
 
             <h3>
               Rating: 

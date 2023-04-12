@@ -47,6 +47,9 @@ ul {
 .navitem li {
   display: inline-block;
   padding: 0 20px;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 .navitem li a {
@@ -62,8 +65,12 @@ ul {
   font-size: 17px;
 }
 
+.login-signup a:hover {
+  color: #ca9eff;
+}
+
 /* Change the color of links on hover */
-.topnav a:hover {
+.topnav li:hover {
   color: #ca9eff;
 }
 

@@ -1,6 +1,7 @@
 import './NavBar.css'
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from '@mui/material';
 import Sidebar from '../SideBar/SideBar';
@@ -9,6 +10,7 @@ function NavBar() {
   const [query, setQuery] = useState("");
   const [width, setWidth] = useState(window.innerWidth)
   const [showSide, setShowSide] = useState(false);
+  const { userName } = useContext(UserContext);
   const navigate = useNavigate();
 
   const showSideBar = () => {
@@ -34,7 +36,20 @@ function NavBar() {
     };
   })
 
-  const renderSearchBar = (width) => {
+ const renderSignIn = (userName) => {
+    if (userName.trim() !== "") {
+      return (<div style={{color: 'white'}}> Hello, {userName}!</div>);
+    }
+
+    return (
+      <div className="login-signup">
+        <a href="/signin">Log in</a>
+        <a href="/signin"> <button style={{paddingRight: 10}}>Sign up</button></a>
+      </div>
+      );
+  }
+
+  const renderSearchBar = () => {
     var name = "search-box";
     return (
       <div className={name}>
@@ -67,7 +82,7 @@ function NavBar() {
           >
             <MenuIcon sx={{ color: "white", fontSize: 40 }} />
           </IconButton>
-          {renderSearchBar(width)}
+          {renderSearchBar()}
         </div>
         <Sidebar
           show={showSide} />
@@ -80,16 +95,12 @@ function NavBar() {
       <div className="navtext">
 
         <ul className="navitem">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About Us!</a></li>
-          <li><a href="/about">Feedback</a></li>
+          <li onClick={(e) => {navigate("/")}}>Home </li>
+          <li onClick={(e) => {navigate("/about")}}>About Us!</li>
+          <li onClick={(e) => {navigate("/about")}}>Feedback</li>
         </ul>
-        {renderSearchBar(width)}
-        <div className="login-signup">
-          <a href="/signin">Log in</a>
-          <a href="/signin"> <button style={{paddingRight: 10}}>Sign up</button></a>
-        </div>
-
+        {renderSearchBar()}
+        {renderSignIn(userName)}
       </div>
     </div>
   );

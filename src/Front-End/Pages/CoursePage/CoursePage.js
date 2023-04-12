@@ -1,11 +1,12 @@
 import './CoursePage.css'
 import NavBar from '../../Components/NavBar/NavBar.js'
 import { Rating } from '@mui/material';
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate} from 'react-router-dom'
 import { getClassData } from '../../../Back-End/API/APIEndPoints';
 import { useEffect, useState, useRef } from 'react';
 import { Pagination,CircularProgress } from '@mui/material';
 function CoursePage() {
+    const navigate = useNavigate();
     const params = useParams()
 
     const [classData, setClass] = useState([]);
@@ -16,6 +17,7 @@ function CoursePage() {
     var lastPage = useRef(1);
     const ratingTotal = useRef(0);
     const ratingCount= useRef(0);
+
     useEffect(() => {
       const fetchData = async () => {
         data.current = await getClassData(params.classID);
@@ -32,7 +34,6 @@ function CoursePage() {
           reviewArr.push(review[1])
         })
         setCurrentReviews(reviewArr.slice(0,2));
-        console.log("Here")
       }
       fetchData();
     }, [params])  // second parameter to stop re-render loop
@@ -85,9 +86,12 @@ function CoursePage() {
       return (
         
         <div className="Reviews">
-            <p> Reviews <span id="reviewCount">({reviewArr.length})</span><a href={url} id="RateClassButton">Rate this class</a></p> 
+            <p> Reviews <span id="reviewCount">({reviewArr.length})</span>
+              <p id="RateClassButton" onClick={(e) => {navigate(url)}}>Rate this class</p>
+            </p> 
             {currentReviews.map((obj) => individualReview(obj))}
-            <Pagination id="pagination" count={Math.ceil((reviewArr.length/2))} color="secondary" onChange={handleReviewChange} />
+            <Pagination id="pagination" count={Math.ceil((reviewArr.length/2))} 
+              color="secondary" onChange={handleReviewChange} />
         </div>
       )
     }

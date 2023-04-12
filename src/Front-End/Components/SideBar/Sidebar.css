@@ -19,14 +19,25 @@
     transition: 350ms;
 }
 
-.listItems > li > a {
+.listItems > li {
     text-decoration: none;
     font-size: 17px;
     padding: 20px;
-    /* padding-left: ;÷\ */
     display: block;
     color: #f2f2f2;
     text-align: center;
+}
+
+.listItems > li > a {
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+}
+
+.listItems a:hover {
+    color: #ca9eff;
 }
 
 .listItems:hover {
