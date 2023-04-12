@@ -2,7 +2,7 @@ import './ReviewPage.css'
 import NavBar from '../../Components/NavBar/NavBar.js';
 import { Rating } from '@mui/material';
 import { useState, useContext} from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import { writeData } from '../../../Back-End/utils/utils.js'
 import { Alert } from '@mui/material';
@@ -12,6 +12,7 @@ function ReviewPage() {
     // global for testing
     const isTest = 1;
     const { userName } = useContext(UserContext);
+    const navigate = useNavigate();
     const params = useParams()
     const [star, setRating] = useState(0);
     const [newName, setName] = useState(userName);
@@ -38,6 +39,7 @@ function ReviewPage() {
           </div>)
         ;
       }
+      // navigate("/signin");
   
       return (
         <div>
