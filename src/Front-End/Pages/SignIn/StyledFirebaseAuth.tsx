@@ -15,10 +15,10 @@ interface Props {
     // The Firebase App auth instance to use.
     firebaseAuth: any; // As firebaseui-web
     className?: string;
+    getUserName;
 }
 
-
-const StyledFirebaseAuth = ({uiConfig, firebaseAuth, className, uiCallback}: Props) => {
+const StyledFirebaseAuth = ({uiConfig, firebaseAuth, className, uiCallback, getUserName}: Props,) => {
     const [userSignedIn, setUserSignedIn] = useState(false);
     const elementRef = useRef(null);
 
@@ -30,6 +30,7 @@ const StyledFirebaseAuth = ({uiConfig, firebaseAuth, className, uiCallback}: Pro
 
         // We track the auth state to reset firebaseUi if the user signs out.
         const unregisterAuthObserver = onAuthStateChanged(firebaseAuth, (user) => {
+            getUserName(user?.displayName ?? null);  // if name undefined, set as null
             if (!user && userSignedIn)
                 firebaseUiWidget.reset();
             setUserSignedIn(!!user);
@@ -47,7 +48,7 @@ const StyledFirebaseAuth = ({uiConfig, firebaseAuth, className, uiCallback}: Pro
             unregisterAuthObserver();
             firebaseUiWidget.reset();
         };
-    }, [uiConfig, uiCallback, firebaseAuth, userSignedIn]);
+    }, [uiConfig, uiCallback, firebaseAuth, userSignedIn, getUserName]);
 
     return <div className={className} ref={elementRef}> </div>;
 };

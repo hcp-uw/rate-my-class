@@ -18,7 +18,7 @@
     right: 5%
 }
 
-.Page > form > input[placeholder="your name..."] {
+.Page > form > div > input[placeholder="your name..."] {
     width: 10%;
     padding: 1.0%;
     border: 0;
@@ -38,19 +38,22 @@
 
 textarea::placeholder {font-family: Arial;}
 
-.Page > form > button {
-  /* remove default behavior */
-  appearance:none;
-  -webkit-appearance:none;
-
-  /* usual styles */
-  padding:10px;
-  border:none;
-  background-color:#8d29cb;
-  color:#fff;
-  font-weight:600;
-  border-radius:5px;
-  width:8%;
+button {
+    display: inline-block;
+    appearance:none;
+    -webkit-appearance:none;
+    padding: 10px;
+    background-color:#430093;
+    color:#fff;
+    font-weight:600;
+    font-size: 16px;
+    border: none;
+    border-radius:5px;
+}
+  
+button:hover {
+    background-color:#ca9eff;
+    color:rgb(0, 0, 0);
 }
 
 .Center {
