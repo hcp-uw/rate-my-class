@@ -3,24 +3,25 @@ import AboutUs from './Front-End/Pages/AboutUs/AboutUs.js';
 import CoursePage from './Front-End/Pages/CoursePage/CoursePage.js';
 import RateCourse from './Front-End/Pages/ReviewPage/ReviewPage.js'
 import SignIn from './Front-End/Pages/SignIn/SignInPage.js'
+import { AuthProvider } from "./Auth";
 
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import React, { useState, useMemo} from 'react';
+import React, { useMemo} from 'react';
 
-export const UserContext = React.createContext({
-  userName: '',
-  setUserName: () => {},
-});
+// export const UserContext = React.createContext({
+//   userName: '',
+//   setUserName: () => {},
+// });
 
 function App() {
-  const [userName, setUserName] = useState("");
-  const value = useMemo(
-    () => ({ userName, setUserName }), 
-    [userName]
-  );
+  // const [userName, setUserName] = useState("");
+  // const value = useMemo(
+  //   () => ({ userName, setUserName }), 
+  //   [userName]
+  // );
 
   return(
-    <UserContext.Provider value={value}>
+    <AuthProvider>
       {useMemo(() => (
         <Router>
           <Routes>
@@ -38,7 +39,7 @@ function App() {
           </Routes>
         </Router>
       ), [])}
-    </UserContext.Provider>
+    </AuthProvider>
   )
 }
 

@@ -3,21 +3,22 @@ import NavBar from '../../Components/NavBar/NavBar.js';
 import { Rating } from '@mui/material';
 import { useState, useContext} from 'react';
 import { useParams } from 'react-router-dom';
-import { UserContext } from '../../../App';
 import { writeData } from '../../../Back-End/utils/utils.js'
 import { Alert } from '@mui/material';
-
+import { AuthContext } from '../../../Auth';
+import { getAuth } from 'firebase/auth'
 
 function ReviewPage() {
     // global for testing
     const isTest = 1;
-    const { userName } = useContext(UserContext);
+    const { userName } = useContext(AuthContext);
     const params = useParams()
     const [star, setRating] = useState(0);
     const [newName, setName] = useState(userName);
     const [newReview, setReview] = useState("");
     const [show, setShow] = useState(false);
-
+    const auth = getAuth(); //access the "authenticator"
+    const user = auth.currentUser
     
     var hashed = cyrb53((newName + newReview + star), 1);
   
@@ -30,11 +31,11 @@ function ReviewPage() {
       setRating(0);
     }
 
-    const renderName = (userName) => {
-      if (userName.trim() !== "") {
+    const renderName = () => {
+      if (user) {
         return (
           <div>
-            <h3>As <u>{userName}</u></h3>
+            <h3>As <u>{user.displayName}</u></h3>
           </div>)
         ;
       }
