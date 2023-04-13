@@ -1,6 +1,5 @@
 import './SignInPage.css'
-import { useContext } from 'react';
-import { UserContext } from '../../../App';
+
 import NavBar from '../../Components/NavBar/NavBar.js'
 
 //import auth functions and variables from Firebase
@@ -25,28 +24,32 @@ const firebaseUIConfig = {
 
 function SignIn() {
     // const [userName, setUserName] = useState("");
+    // useEffect(() => {
+
+
+    // }, [])
     const auth = getAuth(); //access the "authenticator"
-    const { userName, setUserName } = useContext(UserContext);
+     //access the "authenticator"
+    const user = auth.currentUser
+    // const handleUserName = (name) => {
+    //   // take the parameter passed from the Child component
+    //   setUserName(name);
+    // }
 
-    const handleUserName = (name) => {
-      // take the parameter passed from the Child component
-      setUserName(name);
-    }
-
-    const WelcomeMsg = (userName) => {
-      if (userName !== (null || undefined) && userName.trim() !== "") {
-        return (<h1>Welcome to Rate My Class, {userName}! </h1>);
+    const WelcomeMsg = () => {
+      console.log(user)
+      if (user) {
+        return (<h1>Welcome to Rate My Class, {user.displayName}! </h1>);
       }
       return ( <h1>Please sign-in</h1> );
     }
-
     return (
       <div className="SignInPage">
         <NavBar/>
         <div className='Page'>
-            {WelcomeMsg(userName)}
+            {WelcomeMsg()}
             <StyledFirebaseAuth uiConfig={firebaseUIConfig} 
-              firebaseAuth={auth}  getUserName={handleUserName} />
+              firebaseAuth={auth}  />
         </div>
       </div>
     );
