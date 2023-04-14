@@ -40,7 +40,13 @@ function NavBar() {
 
  const renderSignIn = (userName) => {
     if (userName) {
-      return (<div style={{color: 'white'}}> Hello, {userName.displayName}!</div>);
+      return (
+      <div className="login-signup">
+        <a href="/signin">Profile</a>
+
+        <a href="/signin"> <button style={{paddingRight: 10}}>Sign out</button></a>
+      </div>
+      );
     }
 
     return (

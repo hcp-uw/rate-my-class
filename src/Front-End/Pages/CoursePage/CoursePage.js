@@ -36,6 +36,7 @@ function CoursePage() {
             reviewArr.push(review[1])
           })
           setCurrentReviews(reviewArr.slice(0,2));
+          console.log("Here")
         }
 
         setLoading(false)
@@ -55,7 +56,7 @@ function CoursePage() {
         currAnimation = 'fadeIn 0.7s'
       }
       return (
-          <div key = {review.User} className='IndividualReview' style={{animation: currAnimation}} > 
+          <div key = {review.Hash} className='IndividualReview' style={{animation: currAnimation}} > 
             <div className='ReviewStars'>
               <b className='UserTitle'>{review.User}</b> 
               <Rating sx={{color: 'secondary.main'}} 

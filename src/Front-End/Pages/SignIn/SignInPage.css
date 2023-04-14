@@ -17,3 +17,7 @@
     left: 15%;
     right: 5%
 }
+
+.signOutButton {
+    align-self: center;
+}

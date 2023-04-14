@@ -70,3 +70,7 @@ button:hover {
 #SearchBar {
     padding: 10px;
 }
+
+.signIn  {
+    align-self: center;
+}
