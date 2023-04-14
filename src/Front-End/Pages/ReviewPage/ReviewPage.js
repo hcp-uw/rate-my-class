@@ -10,7 +10,7 @@ import { getAuth } from 'firebase/auth'
 
 function ReviewPage() {
     // global for testing
-    const isTest = 1;
+    const isTest = 0;
     const { userName } = useContext(AuthContext);
     const params = useParams()
     const [star, setRating] = useState(0);
@@ -23,12 +23,13 @@ function ReviewPage() {
     var hashed = cyrb53((newName + newReview + star), 1);
   
     const rateClass = async (e) => {
-      await writeData(star, newName, newReview, params.classID, hashed, isTest);
       e.preventDefault();
+      await writeData(star, user.displayName, newReview, params.classID, hashed, isTest);
       setShow(true)
-      setName(" ");
       setReview(" ");
       setRating(0);
+      
+        
     }
 
     const renderName = () => {
@@ -57,15 +58,26 @@ function ReviewPage() {
     if (show) {
       return (
         <div className="ReviewPage">
+          <NavBar/>
           <div className='Page'>
           <Alert variant="filled" severity="success">
-        Successfully Submitted Review!
-        </Alert>
+          Successfully Submitted Review!
+          </Alert>
           </div>
       </div>
       )
+    } 
+    if (user == null) {
+      return(
+      <div className="ReviewPage">
+        <NavBar/>
+        <div className='Page'>
+          <h1> Please Sign in to leave a review!</h1>
+          <a href='/signin'><button className='signIn'>Sign In</button></a>
+        </div>
+      </div>
+      )
     } else {
-    
     return (
       <div className="ReviewPage">
         <NavBar/>
@@ -105,7 +117,8 @@ function ReviewPage() {
           </form>
         </div>
       </div>
-    ); }
+    ); 
+    }
   }
 
 // hashing function
