@@ -12,6 +12,6 @@ export async function getClassData(Class,Test = "Classes/"){
 // @params: 
 //      devs: dev's name
 export async function getDevs(){
-    let data = await getData("People/");
+    let data = await getData("AboutUs/");
     return Array.from(Object.values(data));
 }

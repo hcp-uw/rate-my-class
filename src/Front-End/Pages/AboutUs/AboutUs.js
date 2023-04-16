@@ -3,7 +3,6 @@ import NavBar from '../../Components/NavBar/NavBar.js'
 import { useEffect, useState } from 'react';
 import { getDevs } from '../../../Back-End/API/APIEndPoints';
 import { CircularProgress } from '@mui/material';
-import logo from '../../Components/WashingtonLogo.png';
 
 function AboutUs() {
     const [aboutUsData, setDevs] = useState([]);
@@ -17,18 +16,22 @@ function AboutUs() {
       }
       fetchData();
     })
-
+    
     const loadCard = (data) => {
       return(
-        <div>
-        <img class="bgPic" src={logo} alt="Logo" id='UWLogo'/>
-          <p class="aboutUsPersonHeader">{data.Name}</p>
-          <p class="aboutUsPersonSubtext">
-            <b>Fun-fact:</b> {data["Fun-Fact"]}<br></br>
-            <b>Grade:</b> {data.Grade}<br></br>
-            <b>Major:</b> {data.Major}<br></br>
-            <b>Role:</b> {data.Role}
-          </p>
+        <div key =  {data.Name} className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <img className="profile-pic" src={data.Image} alt="Logo"/>
+            </div>
+            <div className="flip-card-back">
+              <h1>{data.Name}</h1>
+              <p>Fun-fact: {data.FunFact} </p>
+              <p>Grade: {data.Grade} </p>
+              <p>Major: {data.Major} </p>
+              <p>Role: {data.Role}</p>
+            </div>
+          </div>
         </div>
       )
     }
@@ -36,13 +39,13 @@ function AboutUs() {
     const renderTeam = () => {
       if (loading) {
         return(
-          <div class="flex-container">
+          <div className="flex-container">
             <CircularProgress size={100} style={{alignSelf: "center"}}/>
           </div>
         )
       } else {
         return(
-          <div class="flex-container">
+          <div className="flex-container">
             {aboutUsData.map((obj) => loadCard(obj))}
           </div>
           )
@@ -53,10 +56,20 @@ function AboutUs() {
         <div className="AboutUs">
           <NavBar/>
           {/* Minimize this div */}
-          <div class="flex-container"> 
+          <div className="AboutUsText">
+            <h1>Our Mission</h1>
+            <p>We Understand the struggle <strong>EVERY SINGLE QUARTER. WE WANT CHANGE. WE WANT IT NOW.
+              <br/>
+              FOR COLLEGE STUDENTS! BY COLLEGE STUDENTS! AGAINST COLLEGE STUDENTS.</strong>
+               We want UW students to see just how much money they're wasting and where!
+              </p>
+          </div>
+          <div className="flex-container"> 
             <h1 id="meetOurTeam">Meet our Team</h1>
           </div>
           {renderTeam()}
+          
+
         </div>
       )
   }

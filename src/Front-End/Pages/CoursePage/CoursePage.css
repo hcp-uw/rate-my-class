@@ -1,116 +1,179 @@
-.SearchTest {
-    width: 100vw;
-    height: 150vw;
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+#root {
+    height: 100%;
+    
+}
+.CoursePage {
+    width: auto;
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+    position: relative;
     background-color: #FFF5DD;
     background-size: cover;
+    margin: 0;
+    overflow-x: hidden;
+     /* Hide horizontal scrollbar */
+
 }
 
-/* .SearchTest > Page {
+.Page{
     display: flex;
-    position: absolute;
-    margin: auto;
+    animation: fadeIn 0.5s;
+    flex-direction: row;
+}
+
+.Title {
+    align-items: center;
+}
+
+
+#RateClassButton {
+  display: inline-block;
+  appearance:none;
+  -webkit-appearance:none;
+  padding: 7.5px;
+  background-color:#430093;
+  color:#fff;
+  font-weight:600;
+  font-size: 16px;
+  border: none;
+  border-radius:5px;
+  margin-top: 10px;
+  margin-left: 40px;
+  max-width: 150px;
+  align-self: center;
+  text-decoration: none;
+}
+
+#RateClassButton:hover{
+    background-color:#ca9eff;
+    color:rgb(0, 0, 0);
+
+}
+.Reviews {
+    display: flex;
     text-align: left;
     align-items: left;
     flex-direction: column;
     justify-content: left;
-    top: 100%;
-    left: 5%;
-    right: 5%
-} */
-
-.Title h1 {
+    text-overflow: wrap;
+}
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 5px;
+}
+.Title p {
     font-family: 'Raleway', sans-serif;
     font-size: 70px;
     text-align: left;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
-.Title h2 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 28px;
-    text-align: left;
-    margin: 0.2
-}
-
-.Title h3 {
-    /* font-family: 'Raleway', sans-serif; */
-    font-size: 18px;
-    text-align: left;
-    margin: 0.
-}
-
-.GradeDistribute {
-    display: flex;
-    position: absolute;
-    margin: auto;
-    text-align: left;
-    align-items: left;
-    flex-direction: column;
-    justify-content: left;
-    top: 100%;
-    left: 0%;
-    width: 80%;
-    height: 35%
-}
-
-#143grade {
-    width: 25px;
-    height: 20px;
-}
 
 .RatingBar {
     display: flex;
-    position: absolute;
     margin: auto;
-    text-align: right;
-    align-items: right;
-    flex-direction: column;
-    justify-content: right;
-    top: 40%;
-    right: 10%;
 }
 
-.Reviews {
-    display: flex;
-    position: absolute;
-    margin: auto;
-    text-align: left;
-    align-items: left;
-    flex-direction: column;
-    justify-content: left;
-    top: 350%;
+#AvgRatingTxt{
+    margin-right: 10px;
 }
 
-.Reviews > div {
+.IndividualReview {
     margin-bottom: 5px;
     border-style: ridge;
     border-radius: 5px;
     border-color: rgb(51, 0, 111);
     border-width: 1px;
     padding: 5px;
-    width: 35vw;
-    height: 10vh;
-    text-align: left;
-    font-size: 14px;
+    width: 80%;
+    min-width: 400px;
+    overflow: hidden;
+    text-overflow: wrap;
+    height: 200px;
+    flex-wrap: wrap;
+    overflow: visible;
+    word-wrap: break-word;
+}
+@keyframes fadeInLeft {
+    0% {transform: translate3d(100vw, 0, 0)}
+    100% {transform: translate3d(0, 0, 0)}
 }
 
-.Rating body {
-    left: 0%;
+@keyframes fadeInRight {
+    0% {transform: translate3d(-100vw, 0, 0)}
+    100% {transform: translate3d(0, 0, 0)}
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+.fade-exit{
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+span{
+    font-size: 30px;
+}
+
+.Reviews > p {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ReviewStars{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-height: 30px;
+}
+
+
+.UserTitle {
+    font-size: 30px;
+    display: flex;
+    float: left;
+    margin-left: 20px;
+}
+
+.ReviewText {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    display: block;
+}
+
+#reviewCount{
+    text-decoration: none;
+    font-size: 18px;
 }
 
 .center-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    margin-right: 7%;
-    margin-left: 16.87%
-}
-
-header > h1 { display: inline-block; }
-
-header span { 
-    margin-left: 50px; 
-    text-decoration: underline;
-    color: blueviolet;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    padding: 0;
+    top: 50%;
+    left: 50%;
 }

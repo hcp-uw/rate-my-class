@@ -1,61 +1,97 @@
 import './ReviewPage.css'
 import NavBar from '../../Components/NavBar/NavBar.js';
 import { Rating } from '@mui/material';
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import { writeData } from '../../../Back-End/utils/utils.js'
 import { Alert } from '@mui/material';
-
+import { AuthContext } from '../../../Auth';
+import { getAuth } from 'firebase/auth'
 
 function ReviewPage() {
     // global for testing
-    const isTest = 1;
+    const isTest = 0;
+    const { userName } = useContext(AuthContext);
     const params = useParams()
     const [star, setRating] = useState(0);
-    const [newName, setName] = useState("");
+    const [newName, setName] = useState(userName);
     const [newReview, setReview] = useState("");
     const [show, setShow] = useState(false);
-    // console.log("newName: " + newName);
-    // console.log("newReview: " + newReview);
-    // console.log("classID: " + params.classID);
-
+    const auth = getAuth(); //access the "authenticator"
+    const user = auth.currentUser
+    
     var hashed = cyrb53((newName + newReview + star), 1);
   
     const rateClass = async (e) => {
-      await writeData(star, newName, newReview, params.classID, hashed, isTest);
       e.preventDefault();
+      await writeData(star, user.displayName, newReview, params.classID, hashed, isTest);
       setShow(true)
-      setName(" ");
       setReview(" ");
       setRating(0);
+      
+        
+    }
+
+    const renderName = () => {
+      if (user) {
+        return (
+          <div>
+            <h3>As <u>{user.displayName}</u></h3>
+          </div>)
+        ;
+      }
+  
+      return (
+        <div>
+          <h3>Username:</h3>
+          <input
+            type="text"
+            onChange={e => setName(e.target.value)}
+            placeholder="your name..."
+            value={newName}
+          />
+        </div>
+      );
     }
 
     const header = "Leave a review for " + params.classID;
     if (show) {
       return (
         <div className="ReviewPage">
+          <NavBar/>
           <div className='Page'>
           <Alert variant="filled" severity="success">
-        Successfully Submitted Review!
-        </Alert>
+          Successfully Submitted Review!
+          </Alert>
           </div>
       </div>
       )
+    } 
+    if (user == null) {
+      return(
+      <div className="ReviewPage">
+        <NavBar/>
+        <div className='Page'>
+          <h1> Please Sign in to leave a review!</h1>
+          <a href='/signin'><button className='signIn'>Sign In</button></a>
+        </div>
+      </div>
+      )
     } else {
-    
     return (
       <div className="ReviewPage">
         <NavBar/>
         <div className='Page'>
           <form onSubmit={rateClass}>
             <h1>{header}</h1>
-            <h3>Username:</h3>
+            {renderName(userName)}
+            {/* <h3>Username:</h3>
               <input
                 type="text"
                 onChange={e => setName(e.target.value)}
                 placeholder="your name..."
                 value={newName}
-              />
+              /> */}
 
             <h3>
               Rating: 
@@ -81,7 +117,8 @@ function ReviewPage() {
           </form>
         </div>
       </div>
-    ); }
+    ); 
+    }
   }
 
 // hashing function

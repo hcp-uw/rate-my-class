@@ -1,0 +1,45 @@
+.sidebar {
+    background-color: rgb(41, 41, 41);
+    width: 120px;
+    padding-top: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 2;
+    left: -100%;
+    transition: 850ms;
+    z-index: 1;
+    border-bottom-right-radius: 15px;
+    border-width: 5px;
+}
+
+.sidebar.active {
+    left: 0;
+    transition: 350ms;
+}
+
+.listItems > li {
+    text-decoration: none;
+    font-size: 17px;
+    padding: 20px;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+}
+
+.listItems > li > a {
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+}
+
+.listItems a:hover {
+    color: #ca9eff;
+}
+
+.listItems:hover {
+    color: #ca9eff;
+  }

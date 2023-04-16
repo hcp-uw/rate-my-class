@@ -3,8 +3,9 @@
   background-color: rgb(41, 41, 41);
   width: 100%;
   height: 60px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .navtext {
@@ -15,8 +16,27 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 5%;
+  align-self: center;
 }
 
+.mobileNavText {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px 5%;
+  align-self: center;
+}
+
+.mobileNavText .search-box {
+  padding-left: 25vw;
+}
+
+.mobileNavText .search-box-mini {
+  padding-left: 25vw;
+}
+.header-menu {
+  padding-right: 20px;
+}
 /* remove default ul indentation and bullet points */
 ul {
   padding: 0;
@@ -27,6 +47,9 @@ ul {
 .navitem li {
   display: inline-block;
   padding: 0 20px;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 .navitem li a {
@@ -42,8 +65,12 @@ ul {
   font-size: 17px;
 }
 
+.login-signup a:hover {
+  color: #ca9eff;
+}
+
 /* Change the color of links on hover */
-.topnav a:hover {
+.topnav li:hover {
   color: #ca9eff;
 }
 
@@ -66,7 +93,17 @@ button:hover {
 } 
 
 .search-box input {
-  width: 350px;
+  width: 31vw;
+  height: 23px;
+  padding: 5px;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 3.5px;
+}
+
+.search-box-mini input {
+  width: 60%;
   height: 23px;
   padding: 5px;
   border: 0;

@@ -29,7 +29,7 @@ function HomePage() {
           <img src={logo} alt="Logo" id='UWLogo'/>
         </div>
         
-        <div class="popularPages-container">
+        <div className="popularPages-container">
           <div onClick={routeChange1}>CSE142</div>
           {/* document.getElementById("stuff").textContent */}
           <div onClick={routeChange2}>CSE143</div>

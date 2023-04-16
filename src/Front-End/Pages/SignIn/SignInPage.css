@@ -1,0 +1,23 @@
+.SignInPage {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FFF5DD;
+    background-size: cover;
+}
+
+.Page {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    text-align: left;
+    align-items: left;
+    flex-direction: column;
+    justify-content: left;
+    top: 8%;
+    left: 15%;
+    right: 5%
+}
+
+.signOutButton {
+    align-self: center;
+}
