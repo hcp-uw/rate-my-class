@@ -1,7 +1,8 @@
 .HomePage {
     width: 100vw;
     min-height: 100vh;
-    background-image: linear-gradient(
+    background-color: #FFF5DD;
+    /* background-image: linear-gradient(
     180deg,
     hsl(296deg 62% 56%) 0%,
     hsl(290deg 53% 53%) 11%,
@@ -13,10 +14,7 @@
     hsl(253deg 42% 27%) 78%,
     hsl(247deg 42% 23%) 89%,
     hsl(240deg 42% 18%) 100%
-    );
-    /* background-color: #1a1a40; */
-    /* background-color: #CB4AD4; */
-    /* original background-color: rgb(230, 213, 251); */
+    ); */
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -35,7 +33,6 @@
     margin-top: auto;
     /* vw based bc inside div */
     width: max(20vw,250px);
-   
 }
 
 /* Popular pages addition */
@@ -53,7 +50,7 @@
 
 .popularPages-container > div {
     text-align: center;
-    background-color: rgb(171, 108, 177);
+    background-color: #FFFFFF;
     margin: 1vw 1vh;
     padding: 3vw 3vh;
     height: 10vh;
@@ -61,10 +58,10 @@
     max-width: 200px;
     font-size: 2.5vw; /*Font size doesn't increase text box size*/
     font-weight: bold;
-    color: black;
+    color: #757575;
     border-style: solid;
     border-radius: 10px;
-    border-color: rgb(118, 90, 143);
+    border-color: #757575;
     box-shadow: 0 9px #999;
 }
 

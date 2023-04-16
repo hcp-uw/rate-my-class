@@ -35,7 +35,6 @@ function HomePage() {
           <div onClick={routeChange2}>CSE143</div>
           <div onClick={routeChange3}>ARCH150</div>
         </div>
-        
       </div>
     );
   }
