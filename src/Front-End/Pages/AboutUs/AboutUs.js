@@ -61,7 +61,7 @@ function AboutUs() {
             <p>We Understand the struggle <strong>EVERY SINGLE QUARTER. WE WANT CHANGE. WE WANT IT NOW.
               <br/>
               FOR COLLEGE STUDENTS! BY COLLEGE STUDENTS! AGAINST COLLEGE STUDENTS.</strong>
-               We want UW students to see just how much money they're wasting and where!
+              We want UW students to see just how much money they're wasting and where!
               </p>
           </div>
           <div className="flex-container"> 

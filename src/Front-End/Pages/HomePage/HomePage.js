@@ -16,7 +16,6 @@ function HomePage() {
       let path = "/class/CSE143";
       navigate(path);
     }
-
     const routeChange3 = () =>{
       let path = "/class/ARCH150";
       navigate(path);

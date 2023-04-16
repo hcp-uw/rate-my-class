@@ -1,0 +1,13 @@
+.FeedbackPage {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FFF5DD;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+html {
+    scroll-behavior: smooth;
+}
