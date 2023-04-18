@@ -18,7 +18,7 @@ function Sidebar(props) {
                 <ul className="listItems">
                     <li onClick={(e) => {navigate("/")}}>Home</li>
                     <li onClick={(e) => {navigate("/about")}}>About Us!</li>
-                    <li onClick={(e) => {navigate("/about")}}>Feedback</li>
+                    <li onClick={(e) => {navigate("/feedbackpage")}}>Feedback</li>
                     <li><a href="/signin">Profile</a></li>
                     <li><a href="/signin">Sign Out</a></li>
                 </ul>
@@ -30,7 +30,7 @@ function Sidebar(props) {
         <ul className="listItems">
             <li onClick={(e) => {navigate("/")}}>Home</li>
             <li onClick={(e) => {navigate("/about")}}>About Us!</li>
-            <li onClick={(e) => {navigate("/about")}}>Feedback</li>
+            <li onClick={(e) => {navigate("/feedbackpage")}}>Feedback</li>
             <li><a href="/signin">Log in</a></li>
             <li><a href="/signin">Sign up</a></li>
         </ul>

@@ -4,8 +4,34 @@
     background-color: #FFF5DD;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: row;
+}
+
+.FeedbackPage > div {
+    /* Border testing to see flex divs */
+    border-style: none;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.topnav {
+    position: absolute;
+    margin-left: 0px !important; 
+    /* !important to exclude navbar from margin left above ^ */
+}
+
+.feedbackFormTitle {
+    margin-top: 60px;
+    margin-left: 10%;
+}
+
+.rateDiv {
+    margin: auto; /*This centers*/
+}
+
+.feedbackMessageDiv {
+    margin: auto; /*This centers*/
 }
 
 html {
