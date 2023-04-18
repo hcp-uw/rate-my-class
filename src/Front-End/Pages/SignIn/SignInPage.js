@@ -1,10 +1,9 @@
 import './SignInPage.css'
-import { useContext } from 'react';
-import { UserContext } from '../../../App';
+
 import NavBar from '../../Components/NavBar/NavBar.js'
 
 //import auth functions and variables from Firebase
-import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth'
+import { getAuth, EmailAuthProvider, GoogleAuthProvider, signOut } from 'firebase/auth'
 import StyledFirebaseAuth from './StyledFirebaseAuth.tsx';
 
 //an object of configuration values
@@ -18,6 +17,7 @@ const firebaseUIConfig = {
   credentialHelper: 'none', //don't show the email account chooser
   callbacks: { //"lifecycle" callbacks
     signInSuccessWithAuthResult: () => {
+      window.location.reload()
       return false; //don't redirect after authentication
     }
   }
@@ -25,29 +25,45 @@ const firebaseUIConfig = {
 
 function SignIn() {
     // const [userName, setUserName] = useState("");
+    // useEffect(() => {
+
+
+    // }, [])
     const auth = getAuth(); //access the "authenticator"
-    const { userName, setUserName } = useContext(UserContext);
+     //access the "authenticator"
+    const user = auth.currentUser
+    // const handleUserName = (name) => {
+    //   // take the parameter passed from the Child component
+    //   setUserName(name);
+    // }
+    const handleSignOut = () => {
+      signOut(auth);
+      window.location.reload()
 
-    const handleUserName = (name) => {
-      // take the parameter passed from the Child component
-      setUserName(name);
     }
-
-    const WelcomeMsg = (userName) => {
-      if (userName !== (null || undefined) && userName.trim() !== "") {
-        return (<h1>Welcome to Rate My Class, {userName}! </h1>);
+    const WelcomeMsg = () => {
+      if (user) {
+        return (
+        <div className='Page'>
+          <h1>Welcome to Rate My Class, {user.displayName}! </h1>
+          <button onClick={handleSignOut} className='signOutButton'>Sign Out</button>
+        </div>
+        );
       }
-      return ( <h1>Please sign-in</h1> );
+      return (
+      <div className='Page'>
+        <h1>Please sign-in</h1>
+        <StyledFirebaseAuth uiConfig={firebaseUIConfig} 
+              firebaseAuth={auth}  />
+      </div>
+       );
     }
+
 
     return (
       <div className="SignInPage">
         <NavBar/>
-        <div className='Page'>
-            {WelcomeMsg(userName)}
-            <StyledFirebaseAuth uiConfig={firebaseUIConfig} 
-              firebaseAuth={auth}  getUserName={handleUserName} />
-        </div>
+        {WelcomeMsg()}
       </div>
     );
   }

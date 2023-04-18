@@ -20,22 +20,29 @@ function CoursePage() {
 
     useEffect(() => {
       const fetchData = async () => {
+        setLoading(true)
+        setClass([])
         data.current = await getClassData(params.classID);
-        ratingTotal.current = 0
-        const allReviews = Object.entries(data.current.Reviews);
-        ratingCount.current = allReviews.length;
-        for (let i = 0; i < allReviews.length; i++) {
-          ratingTotal.current += Number(allReviews[i][1].Rating);
+        if (data.current) { 
+          ratingTotal.current = 0
+          const allReviews = Object.entries(data.current.Reviews);
+          ratingCount.current = allReviews.length;
+          for (let i = 0; i < allReviews.length; i++) {
+            ratingTotal.current += Number(allReviews[i][1].Rating);
+          }
+          setClass(data.current)
+          const reviewArr = []
+          allReviews.forEach((review)=>{
+            reviewArr.push(review[1])
+          })
+          setCurrentReviews(reviewArr.slice(0,2));
+          console.log("Here")
         }
-        setClass(data.current)
-        setLoading(false);
-        const reviewArr = []
-        allReviews.forEach((review)=>{
-          reviewArr.push(review[1])
-        })
-        setCurrentReviews(reviewArr.slice(0,2));
+
+        setLoading(false)
       }
       fetchData();
+
     }, [params])  // second parameter to stop re-render loop
 
     // @param review: the "Reviews" table data inside course
@@ -49,7 +56,7 @@ function CoursePage() {
         currAnimation = 'fadeIn 0.7s'
       }
       return (
-          <div key = {review.User} className='IndividualReview' style={{animation: currAnimation}} > 
+          <div key = {review.Hash} className='IndividualReview' style={{animation: currAnimation}} > 
             <div className='ReviewStars'>
               <b className='UserTitle'>{review.User}</b> 
               <Rating sx={{color: 'secondary.main'}} 
@@ -76,8 +83,8 @@ function CoursePage() {
 
     const renderReviews = () => {
       // array access
-      const url = "/rate/" + params.classID;
 
+      const url = "/rate/" + params.classID;
       const allReviews = Object.entries(classData.Reviews);
       const reviewArr = []
       allReviews.forEach((review)=>{
@@ -87,7 +94,7 @@ function CoursePage() {
         
         <div className="Reviews">
             <p> Reviews <span id="reviewCount">({reviewArr.length})</span>
-              <p id="RateClassButton" onClick={(e) => {navigate(url)}}>Rate this class</p>
+              <span id="RateClassButton" onClick={(e) => {navigate(url)}}>Rate this class</span>
             </p> 
             {currentReviews.map((obj) => individualReview(obj))}
             <Pagination id="pagination" count={Math.ceil((reviewArr.length/2))} 
@@ -98,18 +105,7 @@ function CoursePage() {
     
     // class not found
     
-    if (classData.length === 0) {
-      return (
-        <div className="CoursePage">
-          <NavBar/>
-          <div className='Page'>
-            <h1> "{params.classID}" doesn't exist </h1>
-          </div>
-        </div>
-      )
-
-    // class info is loading
-    } else if (loading) {
+    if (loading) {
       return (
         <div className='CoursePage'>
           <div className="center-container">
@@ -120,8 +116,18 @@ function CoursePage() {
       )
     
     // display class info
-    } else {
+    } else if (classData.length === 0) {
+      return (
+        <div className="CoursePage">
+          <NavBar/>
+          <div className='Page'>
+            <h1> "{params.classID}" doesn't exist </h1>
+          </div>
+        </div>
+      )
 
+    // class info is loading
+    } else {
       // for some reason rendered twice, therefore divide by 2
       // console.log("total: " + ratingTotal.current);
       const averageRating = (ratingTotal.current)/(ratingCount.current) * 1.0;

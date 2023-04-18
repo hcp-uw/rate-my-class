@@ -1,18 +1,20 @@
 import './NavBar.css'
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../../App';
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from '@mui/material';
 import Sidebar from '../SideBar/SideBar';
+import { getAuth } from 'firebase/auth'
+
 
 function NavBar() {
   const [query, setQuery] = useState("");
   const [width, setWidth] = useState(window.innerWidth)
   const [showSide, setShowSide] = useState(false);
-  const { userName } = useContext(UserContext);
-  const navigate = useNavigate();
+  const auth = getAuth(); //access the "authenticator"
+  const user = auth.currentUser
 
+  const navigate = useNavigate();
   const showSideBar = () => {
     setShowSide(!showSide);
   };
@@ -37,8 +39,14 @@ function NavBar() {
   })
 
  const renderSignIn = (userName) => {
-    if (userName.trim() !== "") {
-      return (<div style={{color: 'white'}}> Hello, {userName}!</div>);
+    if (userName) {
+      return (
+      <div className="login-signup">
+        <a href="/signin">Profile</a>
+
+        <a href="/signin"> <button style={{paddingRight: 10}}>Sign out</button></a>
+      </div>
+      );
     }
 
     return (
@@ -100,7 +108,7 @@ function NavBar() {
           <li onClick={(e) => {navigate("/about")}}>Feedback</li>
         </ul>
         {renderSearchBar()}
-        {renderSignIn(userName)}
+        {renderSignIn(user)}
       </div>
     </div>
   );
