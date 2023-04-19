@@ -36,7 +36,6 @@ function CoursePage() {
             reviewArr.push(review[1])
           })
           setCurrentReviews(reviewArr.slice(0,2));
-          console.log("Here")
         }
 
         setLoading(false)

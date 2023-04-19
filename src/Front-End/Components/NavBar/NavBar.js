@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from '@mui/material';
 import Sidebar from '../SideBar/SideBar';
-import { getAuth } from 'firebase/auth'
+import { getAuth, signOut} from 'firebase/auth'
 
 
 function NavBar() {
@@ -38,13 +38,19 @@ function NavBar() {
     };
   })
 
+  const handleSignOut = () => {
+    signOut(auth);
+    navigate('/');
+  }
+
  const renderSignIn = (userName) => {
     if (userName) {
       return (
       <div className="login-signup">
         <a href="/signin">Profile</a>
 
-        <a href="/signin"> <button style={{paddingRight: 10}}>Sign out</button></a>
+        <a href="/"> <button style={{paddingRight: 10}} 
+          onClick={handleSignOut}>Sign out</button></a>
       </div>
       );
     }
