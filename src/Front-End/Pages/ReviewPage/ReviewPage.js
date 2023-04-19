@@ -19,7 +19,7 @@ function ReviewPage() {
     const [show, setShow] = useState(false);
     const auth = getAuth(); //access the "authenticator"
     const user = auth.currentUser
-    const navigate= useNavigate();
+    const navigation = useNavigate();
     
     var hashed = cyrb53((newName + newReview + star), 1);
   
@@ -64,19 +64,23 @@ function ReviewPage() {
               Successfully Submitted Review!
             </Alert>
             <div className='Redirect'>
-              <button onClick={(e) => {navigate(redirectURL)}}>Return to {params.classID}</button>
+              <button onClick={(e) => {navigation(redirectURL)}}>Return to {params.classID}</button>
             </div>
           </div>
       </div>
       )
-    } 
+    }
+
     if (user == null) {
       return(
       <div className="ReviewPage">
         <NavBar/>
         <div className='Page'>
           <h1> Please Sign in to leave a review!</h1>
-          <a href='/signin'><button className='signIn'>Sign In</button></a>
+          <div className="button-div">
+            <button onClick={(e) => 
+              {navigation('/signin', { state: { className: params.classID } })}}>Sign In</button>
+          </div>
         </div>
       </div>
       )
