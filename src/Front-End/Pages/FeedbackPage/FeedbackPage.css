@@ -5,33 +5,94 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .FeedbackPage > div {
     /* Border testing to see flex divs */
     border-style: none;
     border-radius: 5px;
-    justify-content: center;
 }
 
 .topnav {
-    position: absolute;
-    margin-left: 0px !important; 
-    /* !important to exclude navbar from margin left above ^ */
+    /* margin-left: 0px !important;  */
 }
 
 .feedbackFormTitle {
-    margin-top: 60px;
+    margin-top: 70px;
     margin-left: 10%;
+    font-size: 25px;
 }
 
 .rateDiv {
-    margin: auto; /*This centers*/
+    margin: 0% auto; /*This centers*/
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+.rateDiv > button {
+    justify-content: center;
+    color: red;
+    background-color: red;
+}
+    .emojisDiv {
+
+    }
+    #UWLogo {
+        width: fill;
+    }
+    .emojiRateButton {
+        background-color: yellow; 
+        width: 50px;
+        height: 50px;
+    }
+    .emojiRateButton:hover {
+        background-color: rgb(213, 213, 119); 
+    }
 
 .feedbackMessageDiv {
-    margin: auto; /*This centers*/
+    margin: 0% 35%;
+}
+    #messageTitle{
+        font-size: 25px;
+    }
+    #messageBox {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-style: solid;
+        border-radius: 7px;
+        background-color: white;
+        min-height: 150px;
+    }
+    #messageButton {
+        margin: 2% 37%; /*To Center well*/
+        color: black;
+        background-color: #fdc123; 
+        width: 100px;
+        box-shadow: -3px 4px gray;
+        transition-duration: 0.4s;
+    }
+    #messageButton:hover {
+        background-color: #ffb700;
+        box-shadow: -3px 4px gray;
+    }
+    #messageButton:active {
+        cursor: pointer;
+        color: black;
+        background-color: #ffb700;
+        box-shadow: 0 0px #999;
+        transform: translate(-3px, 4px);
+    }
+
+
+
+
+
+.flex-break {
+    flex-basis: 100%;
+    height: 0;
+    width: 0;
 }
 
 html {

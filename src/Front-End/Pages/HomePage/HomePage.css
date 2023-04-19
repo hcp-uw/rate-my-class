@@ -66,12 +66,12 @@
 }
 
 .popularPages-container > div:hover{
-    background-color: rgb(146, 89, 151);
+    background-color: #acacac;
     cursor: pointer;
 }
 
 .popularPages-container > div:active{
-    background-color: rgb(146, 89, 151);
+    background-color: #acacac;
     cursor: pointer;
     transform: translateY(4px);
     box-shadow: 0 5px #999;

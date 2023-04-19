@@ -15,13 +15,31 @@ function FeedbackPage() {
 
             <div className="rateDiv">
                 <h3>How do you rate your experience?</h3>
-                <img src={logo} alt="Logo" id='UWLogo'/>
+                <div className="flex-break"></div>
+                <div className="emojisDiv">
+                    <button className="emojiRateButton">
+                        <img src={logo} alt="Logo" id='UWLogo'/>
+                    </button>
+                </div>
+                <div className="emojisDiv">
+                    <button className="emojiRateButton">
+                        <img src={logo} alt="Logo" id='UWLogo'/>
+                    </button>
+                </div>
+                <div className="emojisDiv">
+                    <button className="emojiRateButton">
+                        <img src={logo} alt="Logo" id='UWLogo'/>
+                    </button>
+                </div>
             </div>
 
+            
             <div className="feedbackMessageDiv">
-                <h3>Message</h3>
-                <p>TO PUT MESSAGE BOX HERE</p>
-                <button>TO PUT BUTTON HERE</button>
+                <p id="messageTitle">Message</p>
+                <div id="messageBox">
+                    <input type="text" placeholder="your message..."/>
+                </div>
+                <button id="messageButton">Send Feedback</button>
             </div>
         </div>
     );
