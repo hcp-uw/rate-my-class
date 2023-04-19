@@ -51,8 +51,8 @@ function NavBar() {
 
     return (
       <div className="login-signup">
-        <a onClick={(e) => {navigate("/signin")}}>Log in</a>
-        <a> <button style={{paddingRight: 10}} onClick={(e) => {navigate("/signin")}}>Sign up</button></a>
+        <a href="/signin">Log in</a>
+        <a href="/signin"> <button style={{paddingRight: 10}}>Sign up</button></a>
       </div>
       );
   }
