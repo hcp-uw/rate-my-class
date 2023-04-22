@@ -22,10 +22,10 @@
 }
 
 /* Test to see div borders */
-.HomePage > div {
+/* .HomePage > div {
     border-style: solid;
     border-color: black;
-}
+} */
 
 .center-search {
     margin-top: 15vh;
