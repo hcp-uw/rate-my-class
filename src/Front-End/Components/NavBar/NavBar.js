@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from '@mui/material';
 import Sidebar from '../SideBar/SideBar';
-import { getAuth } from 'firebase/auth'
+import { getAuth, signOut} from 'firebase/auth'
 
 
 function NavBar() {
@@ -37,6 +37,11 @@ function NavBar() {
             window.removeEventListener("resize", handleWindowSizeChange);
     };
   })
+
+  const handleSignOut = () => {
+    signOut(auth);
+    navigate('/');
+  }
 
  const renderSignIn = (userName) => {
     if (userName) {
