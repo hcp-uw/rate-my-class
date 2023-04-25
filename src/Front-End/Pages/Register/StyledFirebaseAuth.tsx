@@ -29,7 +29,6 @@ const StyledFirebaseAuth = ({uiConfig, firebaseAuth, className, uiCallback, getU
 
         // We track the auth state to reset firebaseUi if the user signs out.
         const unregisterAuthObserver = onAuthStateChanged(firebaseAuth, (user) => {
-              // if name undefined, set as null
             if (!user && userSignedIn)
                 firebaseUiWidget.reset();
             setUserSignedIn(!!user);

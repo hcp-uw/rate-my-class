@@ -44,7 +44,7 @@ function NavBar() {
       <div className="login-signup">
         <a href="/signin">Profile</a>
 
-        <a href="/signin"> <button style={{paddingRight: 10}}>Sign out</button></a>
+        <a href="/register"> <button style={{paddingRight: 10}}>Sign out</button></a>
       </div>
       );
     }
@@ -52,7 +52,7 @@ function NavBar() {
     return (
       <div className="login-signup">
         <a href="/signin">Log in</a>
-        <a href="/signin"> <button style={{paddingRight: 10}}>Sign up</button></a>
+        <a href="/register"> <button style={{paddingRight: 10}}>Sign up</button></a>
       </div>
       );
   }

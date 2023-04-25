@@ -7,6 +7,7 @@ import { AuthProvider } from "./Auth";
 
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import React, { useMemo} from 'react';
+import Register from './Front-End/Pages/Register/Register.js';
 
 // export const UserContext = React.createContext({
 //   userName: '',
@@ -35,6 +36,8 @@ function App() {
             <Route path="/rate/:classID" element={<RateCourse/>}/>
 
             <Route path="/signin" element={<SignIn/>}/>
+
+            <Route path="/register" element={<Register/>}/>
 
           </Routes>
         </Router>
