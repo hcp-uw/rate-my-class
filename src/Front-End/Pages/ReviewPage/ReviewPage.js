@@ -35,7 +35,7 @@ function ReviewPage() {
       if (user) {
         return (
           <div>
-            <h3>As <u>{user.displayName}</u></h3>
+            <h3>You are signed in as <u>{user.displayName}</u></h3>
           </div>)
         ;
       }
