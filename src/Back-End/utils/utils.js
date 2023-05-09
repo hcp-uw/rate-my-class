@@ -22,24 +22,3 @@ export async function writeData(star, userName, review, classID, hashedKey, isTe
     Date: now.toISOString()
   });
 }
-
-// Returns all reviews for a class sorted by date
-// @Params classID - ID of the class to get reviews for
-export async function getReviewsSortedByDate(classID) {
-  const query = await ref(database, 'Classes/' + classID + '/Reviews');
-  const sortedQuery = orderByChild(query, 'Date');
-  const qResult = await get(sortedQuery);
-  const reviews = qResult.val();
-  return reviews;
-}
-
-// import { getReviewsSortedByDate } from "./utils.js";
-
-// // Example usage: get the reviews for class ID "abc" sorted by date
-// getReviewsSortedByDate("abc")
-//   .then((reviews) => {
-//     console.log(reviews); // prints the sorted reviews to the console
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
