@@ -67,10 +67,15 @@ button:hover {
     top: 30%;
     left: 45%;
 }
+
 #SearchBar {
     padding: 10px;
 }
 
 .signIn  {
     align-self: center;
+}
+
+.Redirect {
+    padding-top: 5%;
 }
