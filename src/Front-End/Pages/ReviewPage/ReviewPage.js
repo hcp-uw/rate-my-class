@@ -1,8 +1,8 @@
 import './ReviewPage.css'
 import NavBar from '../../Components/NavBar/NavBar.js';
 import { Rating } from '@mui/material';
-import { useState, useContext} from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { writeData } from '../../../Back-End/utils/utils.js'
 import { Alert } from '@mui/material';
 import { AuthContext } from '../../../Auth';
@@ -10,7 +10,7 @@ import { getAuth } from 'firebase/auth'
 
 function ReviewPage() {
     // global for testing
-    const isTest = 0;
+    const isTest = 1;
     const { userName } = useContext(AuthContext);
     const params = useParams()
     const [star, setRating] = useState(0);
@@ -19,6 +19,7 @@ function ReviewPage() {
     const [show, setShow] = useState(false);
     const auth = getAuth(); //access the "authenticator"
     const user = auth.currentUser
+    const navigation = useNavigate();
     
     var hashed = cyrb53((newName + newReview + star), 1);
   
@@ -28,8 +29,6 @@ function ReviewPage() {
       setShow(true)
       setReview(" ");
       setRating(0);
-      
-        
     }
 
     const renderName = () => {
@@ -56,24 +55,32 @@ function ReviewPage() {
 
     const header = "Leave a review for " + params.classID;
     if (show) {
+      const redirectURL = '/class/' + params.classID;
       return (
         <div className="ReviewPage">
           <NavBar/>
           <div className='Page'>
-          <Alert variant="filled" severity="success">
-          Successfully Submitted Review!
-          </Alert>
+            <Alert variant="filled" severity="success">
+              Successfully Submitted Review!
+            </Alert>
+            <div className='Redirect'>
+              <button onClick={(e) => {navigation(redirectURL)}}>Return to {params.classID}</button>
+            </div>
           </div>
       </div>
       )
-    } 
+    }
+
     if (user == null) {
       return(
       <div className="ReviewPage">
         <NavBar/>
         <div className='Page'>
           <h1> Please Sign in to leave a review!</h1>
-          <a href='/signin'><button className='signIn'>Sign In</button></a>
+          <div className="button-div">
+            <button onClick={(e) => 
+              {navigation('/signin', { state: { className: params.classID } })}}>Sign In</button>
+          </div>
         </div>
       </div>
       )
