@@ -3,7 +3,7 @@ import './HomePage.css'
 import NavBar from '../../Components/NavBar/NavBar.js'
 import { useNavigate } from 'react-router-dom'
 
-import { getClasses } from '../../../Back-End/API/APIEndPoints';
+import { get3Classes } from '../../../Back-End/API/APIEndPoints';
 import { useEffect, useState } from 'react';
 
 // INVARIANTS:
@@ -11,29 +11,20 @@ import { useEffect, useState } from 'react';
 function HomePage() {
     const navigate = useNavigate();
 
-    // TODO: allow routechange to work with element 
-    // values/review basic DOM
     const routeChange = (name) =>{
-      // let path = "/class/CSE143";
       let path = "/class/" + name;
       navigate(path);
     }
-
-
-
-
 
     const [classesData, setClasses] = useState([]);
 
     useEffect(() => {
       const fetchData = async () => {
-        const data = await getClasses();
+        const data = await get3Classes();
         setClasses(data)
       }
       fetchData();
     })
-
-
 
     const loadClasses = (data) => {
       return(

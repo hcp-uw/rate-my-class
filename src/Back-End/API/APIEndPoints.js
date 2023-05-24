@@ -16,7 +16,7 @@ export async function getDevs(){
     return Array.from(Object.values(data));
 }
 
-export async function getClasses(){
+export async function get3Classes(){
     let data = await getData("Classes/");
-    return Array.from(Object.values(data));
+    return Array.from(Object.values(data)).slice(0, 3);
 }
