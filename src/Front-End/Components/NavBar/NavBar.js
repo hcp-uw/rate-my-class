@@ -111,7 +111,7 @@ function NavBar() {
         <ul className="navitem">
           <li onClick={(e) => {navigate("/")}}>Home </li>
           <li onClick={(e) => {navigate("/about")}}>About Us!</li>
-          <li onClick={(e) => {navigate("/about")}}>Feedback</li>
+          <li onClick={(e) => {navigate("/feedbackpage")}}>Feedback</li>
         </ul>
         {renderSearchBar()}
         {renderSignIn(user)}

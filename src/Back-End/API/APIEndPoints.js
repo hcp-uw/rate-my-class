@@ -15,3 +15,8 @@ export async function getDevs(){
     let data = await getData("AboutUs/");
     return Array.from(Object.values(data));
 }
+
+export async function getClasses(){
+    let data = await getData("Classes/");
+    return Array.from(Object.values(data));
+}

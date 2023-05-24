@@ -3,6 +3,7 @@ import AboutUs from './Front-End/Pages/AboutUs/AboutUs.js';
 import CoursePage from './Front-End/Pages/CoursePage/CoursePage.js';
 import RateCourse from './Front-End/Pages/ReviewPage/ReviewPage.js'
 import SignIn from './Front-End/Pages/SignIn/SignInPage.js'
+import FeedbackPage from './Front-End/Pages/FeedbackPage/FeedbackPage.js';
 import { AuthProvider } from "./Auth";
 
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
@@ -35,6 +36,9 @@ function App() {
             <Route path="/rate/:classID" element={<RateCourse/>}/>
 
             <Route path="/signin" element={<SignIn/>}/>
+
+
+            <Route path="/feedbackpage" element={<FeedbackPage/>}/>
 
           </Routes>
         </Router>
