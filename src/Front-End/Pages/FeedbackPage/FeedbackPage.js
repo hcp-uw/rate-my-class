@@ -1,4 +1,3 @@
-import logo from '../../Components/WashingtonLogo.png'
 import NavBar from '../../Components/NavBar/NavBar.js'
 // import { useNavigate } from 'react-router-dom'
 import './FeedbackPage.css'
