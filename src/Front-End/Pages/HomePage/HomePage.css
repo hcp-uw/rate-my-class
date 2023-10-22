@@ -30,12 +30,12 @@
 .center-search {
     margin-top: 15vh;
     display: flex;
-    height: max(25vh,200px);
+    height: max(25vh,300px);
     justify-content: center;
 }
     #UWLogo {
         margin-top: auto;
-        width: max(20vw,250px);
+        width: max(20vw,350px);
     }
 
 /* Popular pages addition */
