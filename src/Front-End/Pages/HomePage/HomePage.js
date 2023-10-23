@@ -1,4 +1,4 @@
-import logo from '../../Components/WashingtonLogo.png'
+import logo from '../../Components/rmc-logo.png'
 import './HomePage.css'
 import NavBar from '../../Components/NavBar/NavBar.js'
 import { useNavigate } from 'react-router-dom'
