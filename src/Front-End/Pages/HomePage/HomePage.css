@@ -1,86 +1,81 @@
+/* Main CSS, tab/spacing and html order recommended to be kept for readability (unless it looks to ugly)*/
+/* Example: HOME-PAGE 0 indents, CENTER-SEARCH 1 indent and directly below HOME-PAGE in html (ignoring navbar)*/
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**/
+/* The home page flex div. Covers entire screen */
+/**//**//**//**//**//**//**//**//**//**//**//**//**/
 .HomePage {
-    width: 100vw;
-    min-height: 100vh;
+    width: 100%; /*100vw forces a scroll*/
+    min-height: 100%;
     background-color: #FFF5DD;
-    /* background-image: linear-gradient(
-    180deg,
-    hsl(296deg 62% 56%) 0%,
-    hsl(290deg 53% 53%) 11%,
-    hsl(284deg 46% 49%) 22%,
-    hsl(278deg 45% 45%) 33%,
-    hsl(272deg 44% 41%) 44%,
-    hsl(266deg 43% 37%) 56%,
-    hsl(260deg 42% 32%) 67%,
-    hsl(253deg 42% 27%) 78%,
-    hsl(247deg 42% 23%) 89%,
-    hsl(240deg 42% 18%) 100%
-    ); */
     background-size: cover;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
+    /* The flex box in the middle 1/3 of home page, below topNav, usually just for the logo */
+    .center-search {
+        margin-top: 60px; /* topNav height is 60px */
+        display: flex;
+        height: max(25vh,300px); /*HEIGHTS pp-container: 40vh; center-search: 25vh; NavBar: 60px;*/
+        justify-content: center; 
+    }
+        #UWLogo {
+            margin-top: auto;
+            width: max(20vw,350px);
+        }
 
-/* Test to see div borders */
-/* .HomePage > div {
-    border-style: solid;
-    border-color: black;
-} */
-
-.center-search {
-    margin-top: 15vh;
-    display: flex;
-    height: max(25vh,200px);
-    justify-content: center;
-}
-    #UWLogo {
-        margin-top: auto;
-        width: max(20vw,250px);
+    /* A simple header stating : "Popular Classes!" */
+    #popularClassesTitle {
+        margin: auto;
     }
 
-/* Popular pages addition */
-.popularPages-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto; /*Centers it */
-    /* align-items: center;*/
-    justify-content: center;
-    width: 99vw; 
-    height: 45vh;
-}
-    .popularPages-container > div {
-        text-align: center;
-        background-color: #FFFFFF;
-        margin: 1vh 1vw;
-        padding: 3vh 3vw;
-        height: 20vh;
-        width: 15vw;
-        font-size: 25px; /*Font size doesn't increase text box size*/
-        font-weight: bold;
-        text-decoration: underline;
-        color: #757575;
-        border-style: solid;
-        border-radius: 10px;
-        border-width: 3px;
-        border-color: #757575;
-        box-shadow: 0 9px #999;
+    /* BREAK FLEX DIV HERE (details in 'miscallenous css' below) */
+
+    /* The flex box in the bottom 1/3 of the home page */
+    .popularPages-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto; /*Centers it */
+        justify-content: center;
+        width: 100%; /*100vw forces a scroll*/
+        height: 40vh; /*HEIGHTS pp-container: 40vh; center-search: 25vh; NavBar: 60px;*/
     }
-    .popularPages-container > div:hover{
-        background-color: #acacac;
-        cursor: pointer;
-    }
-    .popularPages-container > div:active{
-        background-color: #acacac;
-        cursor: pointer;
-        transform: translateY(4px);
-        box-shadow: 0 5px #999;
-    }
+        .popularPages-container > div {
+            text-align: center;
+            background-color: #FFFFFF;
+            margin: 1vh 1vw;
+            padding: 3vh 3vw;
+            height: 20vh;
+            width: 15vw;
+            font-size: 25px; /*Font size doesn't increase text box size*/
+            font-weight: bold;
+            text-decoration: underline;
+            color: #757575;
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 3px;
+            border-color: #757575;
+            box-shadow: 0 9px #999;
+        }
+        .popularPages-container > div:hover{
+            background-color: #acacac;
+            cursor: pointer;
+        }
+        .popularPages-container > div:active{
+            background-color: #acacac;
+            cursor: pointer;
+            transform: translateY(4px);
+            box-shadow: 0 5px #999;
+        }
 
 
-#popularClassesTitle {
-    margin: auto;
-}
 
+/**//**//**//**//**//**/
+/* Miscallenous CSS */
+/**//**//**//**//**//**/
+
+/* To force a flex box type <br> (because of flex-basis: 100%) */
 .break {
     flex-basis: 100%;
     height: 0;
@@ -91,3 +86,10 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Test to see div borders */
+/* .HomePage > div {
+    border-style: solid; 
+    border-color: black;
+    border-radius: 5px;
+} */
