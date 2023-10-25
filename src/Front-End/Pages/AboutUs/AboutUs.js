@@ -58,11 +58,9 @@ function AboutUs() {
           {/* Minimize this div */}
           <div className="AboutUsText">
             <h1>Our Mission</h1>
-            <p>We Understand the struggle <strong>EVERY SINGLE QUARTER. WE WANT CHANGE. WE WANT IT NOW.
-              <br/>
-              FOR COLLEGE STUDENTS! BY COLLEGE STUDENTS! AGAINST COLLEGE STUDENTS.</strong>
-              We want UW students to see just how much money they're wasting and where!
-              </p>
+            <p>We are a group of students from various majors just working together on a project to 
+              gain experience, construct a useful application, and to have fun!
+            </p>
           </div>
           <div className="flex-container"> 
             <h1 id="meetOurTeam">Meet our Team</h1>
