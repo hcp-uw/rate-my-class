@@ -138,7 +138,7 @@ function CoursePage() {
               <p><strong>{params.classID} </strong></p>
             </div>
             <div className='Description'>
-            <p><strong>{classData.Name} (credits: {classData.Credit})</strong></p>
+            <p><strong>credits: {classData.Credit}</strong></p>
               <div className='RatingBar'>
               <p id='AvgRatingTxt'><strong> Average Rating: </strong></p>
                 <Rating sx={{color: 'secondary.main'}} name="half-rating-read" 

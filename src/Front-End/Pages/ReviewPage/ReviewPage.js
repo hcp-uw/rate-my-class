@@ -10,7 +10,7 @@ import { getAuth } from 'firebase/auth'
 
 function ReviewPage() {
     // global for testing
-    const isTest = 1;
+    const isTest = 0;
     const { userName } = useContext(AuthContext);
     const params = useParams()
     const [star, setRating] = useState(0);
@@ -35,7 +35,7 @@ function ReviewPage() {
       if (user) {
         return (
           <div>
-            <h3>As <u>{user.displayName}</u></h3>
+            <h3>You are signed in as <u>{user.displayName}</u></h3>
           </div>)
         ;
       }
