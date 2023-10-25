@@ -10,7 +10,7 @@ import { getAuth } from 'firebase/auth'
 
 function ReviewPage() {
     // global for testing
-    const isTest = 1;
+    const isTest = 0;
     const { userName } = useContext(AuthContext);
     const params = useParams()
     const [star, setRating] = useState(0);
